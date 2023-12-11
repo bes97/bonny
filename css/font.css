@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Ephesis&family=Spectral:wght@300&display=swap');
+/* 
+font-family: 'Ephesis', cursive;  MarilynWilde 대체함
+font-family: 'Lato', sans-serif;
+font-family: 'Spectral', serif;
+*/
+@font-face{
+    font-family: "Calista";
+    font-style: normal;
+    font-weight: 700;
+    src: url(../font/Calista-Bold.woff) format("woff")
+}
+@font-face{
+    font-family: "Calista";
+    font-style: normal;
+    font-weight: 400;
+    src: url(../font/Calista-Regular.woff) format("woff")
+}
+@font-face{
+    font-family: "Calista";
+    font-style: normal;
+    font-weight: 100;
+    src: url(../font/Calista-Light.woff) format("woff")
+}
+@font-face{
+    font-family: "Pretendard";
+    font-style: normal;
+    font-weight: 400;
+    src: url(../font/Pretendard-Regular.woff) format("woff")
+}
+
+.f_calista { font-family: "Calista"; font-weight: 100;}
+.f_pretendard { font-family: "Pretendard"; font-weight: 400;}
+.f_ephesis { font-family: 'Ephesis', cursive; }
+.f_lato { font-family: 'Lato', sans-serif; }
+.f_spectral { font-family: 'spectral', serif; font-family: "Pretendard"; font-weight: 400;}

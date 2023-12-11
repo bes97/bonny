@@ -1,0 +1,48 @@
+@import url(reset.css);
+@import url(font.css);
+html {
+  --w-pc: 90vw;
+  --w-inside: 80vw;
+
+  --background: #f6f2e7;
+  --primary: #dc970e;
+  --black: #0b0706;
+  --shape: #635b51;
+  --gray: #a6a6a6;
+  --fontdefault: #221815;
+  --fontstrong: #000000;
+  --fontaccess: #121f29;
+  --fontsub: #333333;
+  --subcolor: #765731;
+  --fontaddr: #1e1712;
+  --fontcopy: #312117;
+  --table: #9e8c83;
+  --line: #9b9481;
+
+  font-size: 16px;
+}
+
+.wpc { 
+  width: 100%; max-width: var(--w-pc); 
+  margin: auto; padding: 0 20px;}
+.winside {
+  width: 100%; max-width: var(--w-inside);
+  margin: auto;padding: 0 20px;
+}
+.pt100 { padding-top: 100px;}
+
+body {
+  background-color: var(--background);
+  font-family: "Pretendard";
+  font-size: 1rem;
+  color: var(--fontdefault);
+}
+#header{}
+#footer{}
+
+@media all and (max-width: 1920px) {
+  html {
+    --w-pc: 1650px;
+    --w-inside: 1500px;
+  }
+}
