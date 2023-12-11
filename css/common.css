@@ -1,5 +1,6 @@
 @import url(reset.css);
 @import url(font.css);
+@import url(ani.css);
 html {
   --w-pc: 90vw;
   --w-inside: 80vw;
@@ -36,8 +37,41 @@ body {
   font-family: "Pretendard";
   font-size: 1rem;
   color: var(--fontdefault);
+  overflow-x: hidden;
 }
-#header{}
+#header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 99999;
+}
+#header .in{ 
+  display: flex; justify-content: space-between;
+  flex-wrap: wrap; align-items: flex-end;
+  padding-top: 50px;
+}
+#logo { 
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.875rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  color: #ffffff;
+}
+#logo::before {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 60px;
+  background: url(../img/logo_w.png) no-repeat center center / contain;
+}
+.nav_btn { background-color: #000000;border-radius: 20px;padding: 10px 20px 5px 20px; color: #ffffff;font-weight:400;line-height: 1em; }
+.nav_btn::after {
+  content: "";
+
+}
+
 #footer{}
 
 @media all and (max-width: 1920px) {
