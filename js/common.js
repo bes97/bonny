@@ -9,7 +9,7 @@ document.write('<link rel="shortcut icon" href="">');
 document.write('<link rel="stylesheet" type="text/css" href="./css/common.css">');
 
 $(function() {
-  $('#header').load('../header.html');
-  $('#footer').load('../footer.html');
+  $('#header').load('./header.html');
+  $('#footer').load('./footer.html');
 })
 
