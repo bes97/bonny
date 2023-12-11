@@ -70,6 +70,7 @@
 }
 #offer .tabnav li.focus p { color: var(--primary);transform: translate(10px); }
 
+#villa {padding-bottom: 150px;}
 #villa .titsub {
   font-size: 2.5rem;
   letter-spacing: -1px;
