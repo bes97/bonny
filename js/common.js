@@ -6,10 +6,10 @@ document.write('<meta property="og:description" content="태안, 태안펜션, �
 document.write('<meta property="og:url" content="http://">');
 document.write('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
 document.write('<link rel="shortcut icon" href="">');
-document.write('<link rel="stylesheet" type="text/css" href="css/common.css">');
+document.write('<link rel="stylesheet" type="text/css" href="./css/common.css">');
 
 $(function() {
-  $('#header').load('header.html');
-  $('#footer').load('footer.html');
+  $('#header').load('./header.html');
+  $('#footer').load('./footer.html');
 })
 
