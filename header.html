@@ -3,10 +3,12 @@
   position: sticky;
   top: 50px;
   width: 100%;
+  padding: 30px 0;
   z-index: 99999;
 }
-#header.active { top: 20px; }
+#header.active { top: 0px; background-color: rgba(0,0,0, 0.2); }
 #header .in{ 
+  position: relative;
   display: flex; justify-content: space-between;
   flex-wrap: wrap; align-items: flex-end;
 }
@@ -26,10 +28,74 @@
   height: 60px;
   background: url(./img/logo_w.png) no-repeat center center / contain;
 }
-.nav_btn { background-color: #000000;border-radius: 20px;padding: 10px 20px 5px 20px; color: #ffffff;font-weight:400;line-height: 1em; }
-.nav_btn::after {
-  content: "";
+.nav_btn { 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #000000;border-radius: 20px;padding: 8px 20px 5px 20px; color: #ffffff;font-weight:400;line-height: 24px; }
+.nav_btn .txt {display: block; transform: translateY(3px); margin-left: 5px;}
+.sitemapwrap {  
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  background-color: rgba(255,255,255,0.9);
+  transition: 0.5s ease-in-out;
+}
+.sitemapwrap.active {
+  right: 0;
+  opacity: 1;
+}
+.sitemap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.sitemap .winside { position: relative; }
+.sitemap .close { position: absolute; right: 0; top: -50px; width: 100px; height: 100px; font-size: 0px;}
+.sitemap .close:before, .sitemap .close:after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 1px;
+  background-color: var(--fontdefault);
+}
+.sitemap .close:before { transform: rotate(45deg);}
+.sitemap .close:after { transform: rotate(-45deg);}
+.sitemap .depth1 {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 10px;
+}
+.sitemap .depth1 > li {
+  width: calc(100% / 3);
+  margin-bottom: 50px;
+}
+.sitemap .depth1 > li > a {
+  font-family: "Calista"; font-weight: 100;
+  font-size: 2vw;
+}
+.sitemap .depth2 {
+  font-size: 1.3rem;
+  line-height: 2em;
+}
+.sitemap a { display: inline-block; transition: 1s; }
+.sitemap a:hover { transform: translateX(0.5em) ; }
 
+@media all and (max-width: 500px) {
+  #header { top: 0;}
+  #header.active { padding: 10px 0;}
+  #header #logo, #header #nav_btn {transform: scale(0.8);}
+  #header .wpc { padding: 0;}
+  .sitemap  .close { transform: scale(0.5); top:-70px}
+  .sitemap {padding-top: 100px;}
+  .sitemap .depth1 > li > a {font-size: 1.3rem;word-break: break-all;}
+  .sitemap .depth2 { font-size: 1rem; }
 }
 </style>
 <script>
@@ -40,7 +106,12 @@
       } else {
         $("#header").removeClass("active");
       }
-
+    })
+    $('.nav_btn').click(function() {
+      $('.sitemapwrap').addClass('active');
+    })
+    $('.sitemapwrap .close').click(function() {
+      $('.sitemapwrap').removeClass('active');
     })
   })
 </script>
@@ -49,6 +120,66 @@
     <p>poolvilla<br>bonny</p>
   </div>
   <div id="nav_btn">
-    <button class="nav_btn f_calista">MENU</button>
+    <button class="nav_btn f_calista">
+      <span class="icon material-symbols-outlined">menu</span>
+      <span class="txt">MENU</span>
+    </button>
+  </div>
+</div>
+<div class="sitemapwrap">
+  <div class="sitemap">
+    <div class="winside">
+      <button class="close">닫기</button>
+      <ul class="depth1">
+        <li>
+          <a data-href="#PROLOGUE">PROLOGUE</a>
+          <ul class="depth2">
+            <li><a href="sub1_view.html">풍경</a></li>
+            <li><a href="sub1_notice.html">공지사항</a></li>
+          </ul>
+        </li>
+        <li>
+          <a data-href="#ROOMS">ROOMS</a>
+          <ul class="depth2">
+            <li><a href="sub2_preview.html">객실전체보기</a></li>
+            <li><a href="sub2_room1.html">N</a></li>
+            <li><a href="sub2_room2.html">A1</a></li>
+            <li><a href="sub2_room3.html">M</a></li>
+            <li><a href="sub2_room4.html">H</a></li>
+            <li><a href="sub2_room5.html">A2</a></li>
+            <li><a href="sub2_room6.html">E</a></li>
+          </ul>
+        </li>
+        <li>
+          <a data-href="#SPECIAL">SPECIAL</a>
+          <ul class="depth2">
+            <li><a href="sub3_special1.html">남해바다전망</a></li>
+            <li><a href="sub3_special2.html">조식서비스</a></li>
+            <li><a href="sub3_special3.html">개별바베큐 테라스</a></li>
+            <li><a href="sub3_special4.html">산책로</a></li>
+            <li><a href="sub3_special5.html">무료서비스</a></li>
+          </ul>
+        </li>
+        <li>
+          <a data-href="#TOUR">TOUR</a>
+          <ul class="depth2">
+            <li><a href="sub4_tour.html">여행안내</a></li>
+          </ul>
+        </li>
+        <li>
+          <a data-href="#RESERVATION">RESERVATION</a>
+          <ul class="depth2">
+            <li><a href="sub5_reser.html">예약안내</a></li>
+            <li><a href="sub5_online.html">실시간예약</a></li>
+          </ul>
+        </li>
+        <li>
+          <a data-href="#LOCATION">LOCATION</a>
+          <ul class="depth2">
+            <li><a href="sub6_map.html">오시는길</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

@@ -25,7 +25,8 @@ html {
 
 .wpc { 
   width: 100%; max-width: var(--w-pc); 
-  margin: auto; padding: 0 20px;}
+  margin: auto; padding: 0 20px;
+}
 .winside {
   width: 100%; max-width: var(--w-inside);
   margin: auto;padding: 0 20px;
@@ -37,10 +38,7 @@ body {
   font-family: "Pretendard";
   font-size: 1rem;
   color: var(--fontdefault);
-  overflow-x: hidden;
 }
-
-#footer{}
 
 @media all and (max-width: 1920px) {
   html {

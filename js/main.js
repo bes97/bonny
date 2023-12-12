@@ -30,6 +30,15 @@ $(function() {
              }
          });
      }).scroll();
+
+     floatingObject('.floating1',0,30);
+     floatingObject('.floating2',1.5,-30);
+     floatingObject('.floating3',2,20);
+     floatingObject('.floating4',0.5,-30);
+     floatingObject('.floating5',1.5,-20);
+     floatingObject('.floating6',1,20);
+
+
 })
 
 function setFlowBanner() {
@@ -56,3 +65,17 @@ function setFlowBanner() {
       });
   }
 }
+
+function random(min, max) {
+    return parseFloat((Math.random() * (max - min) + min).toFixed(2))
+  }
+  
+  function floatingObject(selector,delay,size){
+    gsap.to(selector, random(2,2.5), {
+      y: size,
+      repeat: -1,
+      yoyo: true,
+      ease: Power1.easeInOut,
+      delay: random(0,delay)
+    })
+  }

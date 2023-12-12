@@ -5,6 +5,9 @@
   <title>풀빌라 바니</title>
   <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js" integrity="sha512-nTHzMQK7lwWt8nL4KF6DhwLHluv6dVq/hNnj2PBN0xMl2KaMm1PM02csx57mmToPAodHmPsipoERRNn4pG7f+Q==" crossorigin="anonymous"></script>
+  
   <script src="js/common.js" type="text/Javascript" charset="UTF-8"></script>
   <script src="js/main.js" type="text/Javascript" charset="UTF-8"></script>
   <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -49,7 +52,8 @@
             <div class="roomwrap">
               <div class="room rooma scrollon scrollup">
                 <div class="roomimg">
-                    <img src="img/main_poolvilla_a.png" alt="poolvillaA">
+                  <div class="pointer"></div>
+                  <img src="img/main_poolvilla_a.png" alt="poolvillaA">
                 </div>
                 <div class="roomtxt">
                     <p class="roomname">poolvilla <i class="roomtype">A</i></p>
@@ -89,7 +93,7 @@
             </div>
         </div>
       </section>
-      <section id="reserv pt100">
+      <section id="reserv">
         <div class="animated-title f_calista">
           <div class="track">
               <span>POOLVILLA<i class="bonny"></i>BONNY</span>
@@ -124,18 +128,18 @@
               </div>
             </div>
           </div>
-          <div class="left_cont">
-            <div><img src="img/main_reserv_01.png"></div>
-            <div><img src="img/main_reserv_02.png"></div>
-            <div><img src="img/main_reserv_03.png"></div>
+          <div class="left_cont scrollon">
+            <div class="floating1"><img src="img/main_reserv_01.png"></div>
+            <div class="floating2"><img src="img/main_reserv_02.png"></div>
+            <div class="floating3"><img src="img/main_reserv_03.png"></div>
           </div>
-          <div class="right_cont">
-            <div><img src="img/main_reserv_04.png"></div>
-            <div><img src="img/main_reserv_05.png"></div>
-            <div><img src="img/main_reserv_06.png"></div>
+          <div class="right_cont scrollon">
+            <div class="floating4"><img src="img/main_reserv_04.png"></div>
+            <div class="floating5"><img src="img/main_reserv_05.png"></div>
+            <div class="floating6"><img src="img/main_reserv_06.png"></div>
           </div>
         </div>
       </section>
     </div>
-    <footer id="footer"></footer>
+    <footer id="footer" class="scrollon"></footer>
   </div>

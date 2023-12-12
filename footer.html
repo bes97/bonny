@@ -1,52 +1,151 @@
-<div>
-  <ul>
-    <li>
-      <a href="#">PROLOGUE</a>
-      <ul>
-        <li><a href="sub1_view.html">풍경</a></li>
-        <li><a href="sub1_notice.html">공지사항</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#">ROOMS</a>
-      <ul>
-        <li><a href="sub2_preview">객실전체보기</a></li>
-        <li><a href="sub2_room1.html">N house</a></li>
-        <li><a href="sub2_room2.html">A1 house</a></li>
-        <li><a href="sub2_room3.html">M house</a></li>
-        <li><a href="sub2_room4.html">H house</a></li>
-        <li><a href="sub2_room5.html">A2 house</a></li>
-        <li><a href="sub2_room6.html">E house</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#">SPECIAL</a>
-      <ul>
-        <li><a href="sub3_special1.html">남해바다전망</a></li>
-        <li><a href="sub3_special2.html">조식서비스</a></li>
-        <li><a href="sub3_special3.html">개별바베큐 테라스</a></li>
-        <li><a href="sub3_special4.html">산책로</a></li>
-        <li><a href="sub3_special5.html">무료서비스</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#">TOUR</a>
-      <ul>
-        <li><a href="sub4_tour.html">여행안내</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#">RESERVATION</a>
-      <ul>
-        <li><a href="sub5_reser.html">예약안내</a></li>
-        <li><a href="sub5_online.html">실시간예약</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#">LOCATION</a>
-      <ul>
-        <li><a href="sub6_map.html">오시는길</a></li>
-      </ul>
-    </li>
-  </ul>
+<style>
+  body {
+    position: relative;
+    padding-bottom: 700px;
+  }
+  #footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.875rem; 
+  }
+  #footer .in { border-top: 1px solid var(--gray); padding-top: 30px; padding-bottom: 30px;}
+  #footer .footcont { 
+    display: flex; flex-wrap: nowrap; justify-content: space-between;
+  }
+  #footer .depth1 {
+    flex: 0 0 570px;
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+  }
+  #footer .depth1 > li > a {
+    font-family: 'Lato', sans-serif; 
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  #footer .depth1 > li {margin-right: 20px;line-height: 3em;}
+  #footer .depth2 { line-height: 2em; font-size: 0.8rem}
+  .footinfo { text-align: right; padding-right: 15px; }
+  .footinfo .footlogo {
+    font-family: 'Lato', sans-serif; 
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+  .footinfo .logoimg {
+    display: block;
+    width:100%; height: 60px; background: url(./img/logo_b.png) no-repeat top right / contain;
+    margin-bottom: 5px;
+    transform: translateX(15px);
+  }
+  .footinfo .tel { 
+    font-size: 1.625rem;
+    color: var(--fontcopy);
+    margin-bottom: 20px;
+  }
+  .footinfo .sign,  .footinfo .addr { margin-bottom: 10px}
+  .footinfo .sign { font-weight: 700;}
+  .footinfo .info { margin-bottom: 20px;}
+  .footinfo .info span { display: inline-block; word-break: keep-all;}
+  .footinfo .info .bar {position: relative; padding-left: 20px; }
+  .footinfo .info .bar::after {
+    content: '';display: block;width: 1px; height: 0.9em;background-color: var(--fontdefault);
+    position: absolute; top:-0.8em; left:50%;
+  }
+  .footinfo .login span { position: relative; }
+  .footinfo .login span::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px; 
+    background-color: var(--gray);
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+  }
+  .copyright { width: 100%; margin-top: 30px; text-align: center; font-size: 0.875rem;
+               text-transform: uppercase;
+              }
+@media all and (max-width: 870px) {
+  body { padding-bottom: 900px;}
+  #footer .footcont { flex-wrap: wrap;}
+  #footer .depth1 {flex: 0 0 100%;}
+  #footer .depth1 > li {margin-right: 5px;}
+  #footer .depth1 > li > a { font-size: 0.8rem; }
+  #footer .footinfo { width: 100%;}
+}
+@media all and (max-width: 500px) {
+  body { padding-bottom: 700px;}
+  #footer .depth1 { display: none;}
+ }
+</style>
+<div class="wpc in">
+  <div class="footcont">
+    <ul class="depth1">
+      <li>
+        <a href="#">PROLOGUE</a>
+        <ul class="depth2">
+          <li><a href="sub1_view.html">풍경</a></li>
+          <li><a href="sub1_notice.html">공지사항</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">ROOMS</a>
+        <ul class="depth2">
+          <li><a href="sub2_preview">객실전체보기</a></li>
+          <li><a href="sub2_room1.html">N house</a></li>
+          <li><a href="sub2_room2.html">A1 house</a></li>
+          <li><a href="sub2_room3.html">M house</a></li>
+          <li><a href="sub2_room4.html">H house</a></li>
+          <li><a href="sub2_room5.html">A2 house</a></li>
+          <li><a href="sub2_room6.html">E house</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">SPECIAL</a>
+        <ul class="depth2">
+          <li><a href="sub3_special1.html">남해바다전망</a></li>
+          <li><a href="sub3_special2.html">조식서비스</a></li>
+          <li><a href="sub3_special3.html">개별바베큐 테라스</a></li>
+          <li><a href="sub3_special4.html">산책로</a></li>
+          <li><a href="sub3_special5.html">무료서비스</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">TOUR</a>
+        <ul class="depth2">
+          <li><a href="sub4_tour.html">여행안내</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">RESERVATION</a>
+        <ul class="depth2">
+          <li><a href="sub5_reser.html">예약안내</a></li>
+          <li><a href="sub5_online.html">실시간예약</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">LOCATION</a>
+        <ul class="depth2">
+          <li><a href="sub6_map.html">오시는길</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="footinfo">
+       <div class="footlogo">
+        <p class="logoimg"></p>
+        <p class="logosign">POOLVILLA BONNY</p>
+       </div>
+       <div class="tel">010-9594-8285</div>
+       <div class="sign">POOLVILLA BONNY</div>
+       <div class="addr">주소 : 충청남도 태안군 근흥면 갈음이길 236</div>
+       <div class="info">
+        <span>사업자번호 : 360-11-02134(대표:최지환)</span>
+        <span class="bar"></span>
+        <span>통신판매신고번호 : 가나다라마바자 102</span>
+       </div>
+       <div class="login"><span>관리자로그인</span></div>
+    </div>
+  </div>
+  <div class="copyright">copyright(C) POOLVILLA BONNY  reserved. photo & designed by always-design</div>
 </div>
