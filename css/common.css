@@ -1,6 +1,8 @@
 @import url(reset.css);
 @import url(font.css);
-@import url(ani.css);
+@import url(slick.css);
+@import url(ui.css);
+
 html {
   --w-pc: 90vw;
   --w-inside: 80vw;

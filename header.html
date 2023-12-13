@@ -1,6 +1,6 @@
 <style>
   #header {
-  position: sticky;
+  position: fixed;
   top: 50px;
   width: 100%;
   padding: 30px 0;
@@ -13,6 +13,7 @@
   flex-wrap: wrap; align-items: flex-end;
 }
 #logo { 
+  position: relative;
   text-transform: uppercase;
   font-family: 'Lato', sans-serif;
   font-size: 0.875rem;
@@ -27,6 +28,12 @@
   width: 50px;
   height: 60px;
   background: url(./img/logo_w.png) no-repeat center center / contain;
+}
+.homelink {
+  display: block; 
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 .nav_btn { 
   display: flex;
@@ -48,16 +55,17 @@
   right: 0;
   opacity: 1;
 }
-.sitemap {
+.sitemap {height: 100%;}
+.nav {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  align-content: center;
   width: 100%;
   height: 100%;
   overflow: auto;
 }
-.sitemap .winside { position: relative; }
-.sitemap .close { position: absolute; right: 0; top: -50px; width: 100px; height: 100px; font-size: 0px;}
+.sitemap .winside { position: relative; height: 100%; }
+.sitemap .close { position: absolute; right: 0; top: 50px; width: 100px; height: 100px; font-size: 0px;}
 .sitemap .close:before, .sitemap .close:after {
   content: '';
   display: block;
@@ -71,6 +79,7 @@
   display: flex;
   flex-wrap: wrap;
   padding: 0 10px;
+  width: 100%;
 }
 .sitemap .depth1 > li {
   width: calc(100% / 3);
@@ -93,8 +102,7 @@
   #header #logo, #header #nav_btn {transform: scale(0.8);}
   #header .wpc { padding: 0;}
   #header .nav_btn .txt { transform: translateY(0);}
-  .sitemap  .close { transform: scale(0.5); top:-70px}
-  .sitemap {padding-top: 100px;}
+  .sitemap  .close { transform: scale(0.5); }
   .sitemap .depth1 > li > a {font-size: 1.3rem;word-break: break-all;}
   .sitemap .depth2 { font-size: 1rem; }
 }
@@ -110,14 +118,17 @@
     })
     $('.nav_btn').click(function() {
       $('.sitemapwrap').addClass('active');
+      $('body').css({overflow:'hidden'});
     })
     $('.sitemapwrap .close').click(function() {
       $('.sitemapwrap').removeClass('active');
+      $('body').css({overflow:'auto'});
     })
   })
 </script>
 <div class="wpc in">
   <div id="logo">
+    <a href="/" class="homelink"></a>
     <p>poolvilla<br>bonny</p>
   </div>
   <div id="nav_btn">
@@ -131,56 +142,58 @@
   <div class="sitemap">
     <div class="winside">
       <button class="close">닫기</button>
-      <ul class="depth1">
-        <li>
-          <a data-href="#PROLOGUE">PROLOGUE</a>
-          <ul class="depth2">
-            <li><a href="sub1_view.html">풍경</a></li>
-            <li><a href="sub1_notice.html">공지사항</a></li>
-          </ul>
-        </li>
-        <li>
-          <a data-href="#ROOMS">ROOMS</a>
-          <ul class="depth2">
-            <li><a href="sub2_preview.html">객실전체보기</a></li>
-            <li><a href="sub2_room1.html">N</a></li>
-            <li><a href="sub2_room2.html">A1</a></li>
-            <li><a href="sub2_room3.html">M</a></li>
-            <li><a href="sub2_room4.html">H</a></li>
-            <li><a href="sub2_room5.html">A2</a></li>
-            <li><a href="sub2_room6.html">E</a></li>
-          </ul>
-        </li>
-        <li>
-          <a data-href="#SPECIAL">SPECIAL</a>
-          <ul class="depth2">
-            <li><a href="sub3_special1.html">남해바다전망</a></li>
-            <li><a href="sub3_special2.html">조식서비스</a></li>
-            <li><a href="sub3_special3.html">개별바베큐 테라스</a></li>
-            <li><a href="sub3_special4.html">산책로</a></li>
-            <li><a href="sub3_special5.html">무료서비스</a></li>
-          </ul>
-        </li>
-        <li>
-          <a data-href="#TOUR">TOUR</a>
-          <ul class="depth2">
-            <li><a href="sub4_tour.html">여행안내</a></li>
-          </ul>
-        </li>
-        <li>
-          <a data-href="#RESERVATION">RESERVATION</a>
-          <ul class="depth2">
-            <li><a href="sub5_reser.html">예약안내</a></li>
-            <li><a href="sub5_online.html">실시간예약</a></li>
-          </ul>
-        </li>
-        <li>
-          <a data-href="#LOCATION">LOCATION</a>
-          <ul class="depth2">
-            <li><a href="sub6_map.html">오시는길</a></li>
-          </ul>
-        </li>
-      </ul>
+      <nav class="nav">
+        <ul class="depth1">
+          <li>
+            <a data-href="#PROLOGUE">PROLOGUE</a>
+            <ul class="depth2">
+              <li><a href="sub1_view.html">풍경</a></li>
+              <li><a href="sub1_notice.html">공지사항</a></li>
+            </ul>
+          </li>
+          <li>
+            <a data-href="#ROOMS">ROOMS</a>
+            <ul class="depth2">
+              <li><a href="sub2_preview.html">객실전체보기</a></li>
+              <li><a href="sub2_room1.html">N</a></li>
+              <li><a href="sub2_room2.html">A1</a></li>
+              <li><a href="sub2_room3.html">M</a></li>
+              <li><a href="sub2_room4.html">H</a></li>
+              <li><a href="sub2_room5.html">A2</a></li>
+              <li><a href="sub2_room6.html">E</a></li>
+            </ul>
+          </li>
+          <li>
+            <a data-href="#SPECIAL">SPECIAL</a>
+            <ul class="depth2">
+              <li><a href="sub3_special1.html">남해바다전망</a></li>
+              <li><a href="sub3_special2.html">조식서비스</a></li>
+              <li><a href="sub3_special3.html">개별바베큐 테라스</a></li>
+              <li><a href="sub3_special4.html">산책로</a></li>
+              <li><a href="sub3_special5.html">무료서비스</a></li>
+            </ul>
+          </li>
+          <li>
+            <a data-href="#TOUR">TOUR</a>
+            <ul class="depth2">
+              <li><a href="sub4_tour.html">여행안내</a></li>
+            </ul>
+          </li>
+          <li>
+            <a data-href="#RESERVATION">RESERVATION</a>
+            <ul class="depth2">
+              <li><a href="sub5_reser.html">예약안내</a></li>
+              <li><a href="sub5_online.html">실시간예약</a></li>
+            </ul>
+          </li>
+          <li>
+            <a data-href="#LOCATION">LOCATION</a>
+            <ul class="depth2">
+              <li><a href="sub6_map.html">오시는길</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
 </div>

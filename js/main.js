@@ -38,7 +38,20 @@ $(function() {
      floatingObject('.floating5',1.5,-20);
      floatingObject('.floating6',1,20);
 
-
+     $(".lazy").slick({
+      lazyLoad: 'ondemand',
+      slideToShow: 1,
+      slideToScroll: 1,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      fade: true,
+      swiper: false,
+      pauseOnHover : false,
+      draggable: false,
+      arrows: false,
+      dots: true,
+    });
 })
 
 function setFlowBanner() {
