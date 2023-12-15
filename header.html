@@ -65,7 +65,12 @@
   overflow: auto;
 }
 .sitemap .winside { position: relative; height: 100%; }
-.sitemap .close { position: absolute; right: 0; top: 50px; width: 100px; height: 100px; font-size: 0px;}
+.sitemap .close { 
+  position: absolute; right: 0; top: 50px; width: 100px; height: 100px; font-size: 0px;  
+  transform: rotate(0);
+  transition: transform 1.3s;
+}
+.sitemap .close.active {transform: rotate(720deg);}
 .sitemap .close:before, .sitemap .close:after {
   content: '';
   display: block;
@@ -119,8 +124,10 @@
     $('.nav_btn').click(function() {
       $('.sitemapwrap').addClass('active');
       $('body').css({overflow:'hidden'});
+      $('.sitemapwrap .close').addClass("active");
     })
     $('.sitemapwrap .close').click(function() {
+      $('.sitemapwrap .close').removeClass("active")
       $('.sitemapwrap').removeClass('active');
       $('body').css({overflow:'auto'});
     })
