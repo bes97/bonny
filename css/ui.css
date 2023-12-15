@@ -2,9 +2,12 @@
 * {  transition: 0.3s; }
 
 .scrollon { opacity: 0;transition: all 1s; }
+.scrollon.delay { transition-delay: 0.3s;}
 .scrollon.active {opacity: 1 !important;transform: translate(0, 0) !important;}
 .scrollon.scrollup { transform: translate(0, 100px); }
-
+.scrollon.scrolldown { transform: translate(0, -50px); }
+.scrollon.scrollleft { transform: translate(100px, 0); }
+.scrollon.scrollleft50 { transform: translate(50px, 0); }
 .scrollon .moving-outline circle {
   stroke-dasharray: 1320;
 }
@@ -108,6 +111,7 @@
   font-size: 3vw;
   line-height: 0.6em;
   transition: color 0.2s, transform 0.2s;
+  transition-timing-function: cubic-bezier(.22,.68,0,1.71);
 }
 #offer .num {
   margin-right: 30px;

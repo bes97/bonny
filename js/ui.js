@@ -2,7 +2,7 @@ $(function() {
   let tabcont = $('.tabnav .focus .tabtxt').data('cont');
   $(tabcont).show();
   $('.fntab').each(function(){
-    $('.tabnav li').mouseenter(function(){
+      $('.tabnav li').on("mouseenter", function(){
       tabcont = $(this).find('.tabtxt').data('cont');
       $('.tabnav li').removeClass('focus');
       $('.tabcont .tabitem').fadeOut(300);
@@ -12,12 +12,12 @@ $(function() {
   })
 
   setFlowBanner();
-     const $counters = $(".scrollon");
+     const $counters = $(".scrollon");  //translate
      const exposurePercentage = 20; 
      const loop = true;
  
      $(window).on('scroll', function() {
-         $counters.each(function() {
+         $counters.each(function() {   //translate
              const $el = $(this);
              const rect = $el[0].getBoundingClientRect();
              const winHeight = window.innerHeight; 
@@ -30,13 +30,6 @@ $(function() {
              }
          });
      }).scroll();
-
-     floatingObject('.floating1',0,30);
-     floatingObject('.floating2',1.5,-30);
-     floatingObject('.floating3',2,20);
-     floatingObject('.floating4',0.5,-30);
-     floatingObject('.floating5',1.5,-20);
-     floatingObject('.floating6',1,20);
 
      $(".lazy").slick({
       lazyLoad: 'ondemand',

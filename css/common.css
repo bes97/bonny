@@ -36,9 +36,11 @@ html {
 .pt100 { padding-top: 100px; transition: 0.5s;}
 
 body {
+  position: relative;
   background-color: var(--background);
   font-family: "Pretendard";
   font-size: 1rem;
+  font-weight: 400;
   color: var(--fontdefault);
 }
 
