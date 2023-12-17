@@ -1,15 +1,44 @@
 body { padding-bottom: 400px; }
-.flex-around { display: flex; flex-wrap: wrap; justify-content: space-around;}
+h1 { font-family: "Calista";font-weight: 100;font-size: 9vw;text-transform: uppercase;text-align: center;margin-bottom: 0.8em;}
+h2 { font-family: "Calista";font-weight: 100;font-size: 3.5vw;}
+h3 { font-weight: 400;  font-size: 1.5rem;}
+h4 { font-weight: 700;  font-size: 1.125rem;}
+.bigtxt { font-size: 1.5em; }
+.imgbox img { width: 100%; height: 100%; object-fit: cover;}
+.top img { width: 100%; height: 100%; object-fit: cover;}
+.flex-around { display: flex; flex-wrap: wrap; justify-content: space-around;align-items: flex-start; height: auto;}
+.flex-left { display: flex; flex-wrap: nowrap; justify-content: flex-start; }
+.flex-leftwrap { display: flex; flex-wrap: wrap; justify-content: flex-start; }
+.flex-space { display: flex; flex-wrap: nowrap; justify-content: space-between; }
+.flex-spacewrap { display: flex; flex-wrap: wrap; justify-content: space-between; }
+.flex-vcenter { display: flex; 
+  flex-wrap: wrap; align-items: center;}
+.contents { padding-top: 13vw; padding-bottom: 10vw;}
+.btn_square { display:inline-block; padding: 1em 3em 0.5em; border: 1px solid var(--fontdefault); font-family: "Calista";
+  font-weight: 400; color:var(--fontdefault);
+transition: 0.5s;}
+.btn_square:hover { border-radius: 20px;}
+
 .slick-dots { bottom: 7vh;}
 .slidetxt { bottom: 10vh; font-size: 3.5vw; text-align: center;line-height: 1em;}
 .slidetxt_small { font-size: 1.3rem;line-height: 1em; }
-.contents { padding-top: 13vw; padding-bottom: 10vw;}
-img { width: 100%; height: 100%; object-fit: cover;}
-h1 { font-family: "Calista";font-weight: 100;font-size: 9vw;text-transform: uppercase;text-align: center;margin-bottom: 0.8em;}
 
+.tb-d1{ 
+  border-collapse: collapse;
+  width: 100%; 
+  font-size: 0.8rem;
+}
+.tb-d1 .backstrong { background-color: #f8eada; }
+.tb-d1 th { background-color: #eeeeee; font-weight: 700;padding: 10px;border: 1px solid #cccccc;vertical-align: middle; color: var(--shape); }
+.tb-d1 td { background-color: #ffffff; padding: 10px;border: 1px solid #cccccc;vertical-align: middle; color: var(--shape); text-align: center; }
+.tb-d2{ 
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+.tb-d2 th { background-color: #000000; font-weight: 400;padding: 10px;vertical-align: middle; color: var(--background); }
+.tb-d2 td { padding: 10px;vertical-align: middle; text-align: center; }
 @media all and (max-width: 500px) { 
   body { padding-bottom: 400px !important; }
 
-  .top div{ width: 100vw; height: 50vh; }
-  .top img { width: 100%; height: 100%; object-fit: cover; }
+  .top div{ width: 100%; height: 50vh; }
 }

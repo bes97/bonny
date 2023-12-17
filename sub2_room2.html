@@ -11,6 +11,82 @@
   <script src="js/common.js" type="text/Javascript" charset="UTF-8"></script>
   <script src="js/ui.js" type="text/Javascript" charset="UTF-8"></script>
   <link rel="stylesheet" type="text/css" href="css/sub.css">
+  <style>
+     h3 {margin-bottom: 1em; }
+     .txtcont { line-height: 2em; margin-bottom: 3em;}
+     .sec1 .grid {
+      display: grid;
+      grid-template-columns: calc((100% - 15vw)/2) calc((100% - 15vw)/2)
+      ;
+      grid-template-areas:
+      "a b"
+      "a c";
+      justify-content: space-around;
+    }
+    .sec1 .area1 { grid-area: a; height: 90vh; overflow: hidden; }
+    .sec1 .area2 { grid-area: b; padding-bottom: 50px;}
+    .sec1 .area3 { grid-area: c; }
+
+    .more { position: relative; padding: 1em;font-family: "Calista";
+  font-weight: 400; }
+    .more .icon { position: absolute; right: 0.5em;top: 50%; transform: translateY(-50%); }
+    .more .remove { display: none;}
+    .more .add { display: block;}
+    .more .icon.active .remove{ display: block;}
+    .more .icon.active .add{ display: none;}
+    .imgtxtbox {
+      position: relative;
+      font-size: 1.1rem;
+      text-align: left;
+      word-break: keep-all;
+      line-height: 1.5em;
+    }
+    .imgtxtbox_in { font-size: 1rem; padding: 30px 1em 50px ; }
+    .imgtxtbox_in .span1, .imgtxtbox_in .span2 { display: block; flex: 0 0 auto}
+    .imgtxtbox_in .span1 { margin-right: 10px; font-weight: 700;}
+    .sec1 .price li { border-top: 1px solid var(--gray); }
+    .sec1 .price ul { border-bottom: 1px solid var(--gray); }
+
+    .sec2 { margin-bottom: 10vw;}
+    .sec2 .reserv_cont { position: relative; display: flex; flex-wrap: nowrap; justify-content: space-between; }
+    .sec2 .reserv_cont img { width: 100%;}
+    .sec2  .reserv_cont div:nth-child(1) { position: relative;left: 10vw; top: 30vw;z-index:2}
+    .sec2 .reserv_cont div:nth-child(2) { position: relative;left: 0px; top: 0; z-index:1}
+    .sec2 .reserv_cont div:nth-child(3) { position: relative;left: -5vw;top: 20vw;z-index:3}
+    .sec2 .reserv_cont div:nth-child(4) { position: relative;left: 0px;top: 40vw;z-index:4}
+    .sec2 .in { position: relative; }
+
+
+    @media all and (max-width: 560px) {
+      .sec1 .grid { display: block; height: auto; }
+      .sec1 .area1 { margin-bottom: 50px; }
+      .rightbox { width: 100%; }
+      .leftbox { width: 100%; }
+    }
+  </style>
+  <script>
+    $(function() {
+      floatingObject('.floating1',0,30);
+      floatingObject('.floating3',2,30);
+      floatingObject('.floating4',0.5,-50);
+
+      let lastScrollY = 0;
+      window.addEventListener('scroll', e => {
+        const scrollY = window.scrollY;
+        const scrollDown = scrollY > lastScrollY;
+        if (scrollDown) {
+          floatingObject('.floating1',0,30);
+          floatingObject('.floating3',2,30);
+          floatingObject('.floating4',0.5,-50);
+        } else {
+          floatingObject('.floating1',0,0);
+          floatingObject('.floating3',2,0);
+          floatingObject('.floating4',0.5,0);
+        }
+        lastScrollY = scrollY;
+      });
+    })
+  </script>
 </head>
 <body>
   <div id="wrap">
@@ -34,10 +110,105 @@
         </div>
       </section>
       
-      <section></section>
-
+      <section class="sec1 contents">
+        <div class="wpc">
+          <h1 class="scrollon scrollup2">INFORMATION</h1>
+          <div class="inforoom grid">
+            <div class="leftbox area1 imgbox">
+              <img src="img/sub2_room2_img.png" alt="풀빌라A사진">
+            </div>
+            <div class="reser area2 flex-vcenter">
+              <div>
+                <h3 class="scrollon scrollup2 delay">자랑할만한 오션뷰의 감성 풀빌라, 풀빌라 바니.</h3>
+                <div class="txtcont scrollon scrollup2 delay2">
+                  <p>맑고 푸른 바다가 펼쳐지는 특별한 공간에서 최고의 휴식을 즐겨보세요. </p>
+                  <p>풍부한 감성과 고요한 아름다움이 어우러진 특별한 경험을 제공해드립니다.</p>
+                </div>
+                <button class="btn_square scrollon scrollup2 delay">RESERVATION</button>
+              </div>
+            </div>
+            <div class="price area3">
+              <ul class="accrclose scrollon delay">
+                <li>
+                  <div class="more" data-target="#list-item1">
+                    <p>price</p>
+                    <button class="icon">
+                      <span class="material-symbols-outlined add">add</span>
+                      <span class="material-symbols-outlined remove">remove</span>
+                    </button>
+                  </div>
+                  <div class="imgtxtbox" id="list-item1">
+                    <div class="imgtxtbox_in">
+                      금액표 연동
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="more"  data-target="#list-item2">
+                    <p>roomtype</p>
+                    <button class="icon">
+                      <span class="material-symbols-outlined add">add</span>
+                      <span class="material-symbols-outlined remove">remove</span>
+                    </button>
+                  </div>
+                  <div class="imgtxtbox" id="list-item2">
+                    <div class="imgtxtbox_in">
+                      <p class="flex-left"><span class="span1">- 형태 :</span><span class="span2"> 독채(오션뷰+실내개별수영장+개별테라스)</span></p>
+                      <p class="flex-left"><span class="span1">- 인원 :</span><span class="span2"> 기준 2인 ~ 최대 4인</span></p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="more" data-target="#list-item3">
+                    <p>amenities</p>
+                    <button class="icon">
+                      <span class="material-symbols-outlined add">add</span>
+                      <span class="material-symbols-outlined remove">remove</span>
+                    </button>
+                  </div>
+                  <div class="imgtxtbox" id="list-item3">
+                    <div class="imgtxtbox_in">
+                      <p class="flex-left"><span class="span1">- 침실 :</span><span class="span2">인터넷TV,소파,소파테이블,에어컨,공기청정기,퀸사이즈침대</span></p>
+                      <p class="flex-left"><span class="span1">- 주방 :</span>
+                          <span class="span2">에어컨,식탁,의자,냉장고,전자레인지,1구인덕션, 캡슐커피얼음냉온정수기,
+  냄비,접시,수저,젓가락,야채바구니,와인잔,소주잔,머그컵, 도마,쟁반,칼,가위,집게,와인오프너, 소화기,화재경보기
+  <br>위생적인 관리를 위해 조미료와 전기 밥솥은 준비 되어 있지 않습니다
+  <br>전자레인지용 밥을 이용해 주세요</span>
+                      </p> 
+                      <p class="flex-left"><span class="span1">- 욕실 :</span>
+                        <span class="span2">샴푸,린스,바디워시,바디스폰지,칫솔,치약,드라이기,타올</span>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="sec2 contents">
+        <div class="wpc">
+          <h1 class="scrollon scrollup2">POOLVILLA <span class="bigtxt">A</span></h1>
+          <div class="in">
+            <div class="imgtxt scrollon scrollup2 area2">
+              타이핑 미완성
+              <div class="typing-txt">
+                <p>If you long to experience the special moments unfolding in a place adorned by the clear, azure sea,</p>
+                <p>then the perfect sanctuary for your relaxation awaits right here. in the beauty of nature within a specially crafted space just for you.</p>
+              </div>
+              <div class="typing"></div>
+            </div>
+            <div class="scrollon reserv_cont">
+              <div class="floating1"><img src="img/sub2_room2_a1.png"></div>
+              <div><img src="img/sub2_room2_a2.png"></div>
+              <div class="floating3"><img src="img/sub2_room2_a3.png"></div>
+              <div class="floating4"><img src="img/sub2_room2_a4.png"></div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section id="villa">
-        <div class="in winside pt100">
+        <div class="in wpc pt100">
             <div class="titwrap scrollon">
               <p class="titsub f_calista">Private poolvilla</p>
               <p class="tit f_calista">POOLVILLA BONNY</p>
@@ -46,7 +217,7 @@
                 <p>바닷가에서 햇빛을 즐기며, 최상의 휴식을 경험하세요.</p>
               </div>
             </div>
-            <div class="roomwrap">
+            <div class="roomwrap imgbox">
               <div class="room rooma scrollon scrollup">
                 <div class="roomimg">
                   <div class="pointer"></div>

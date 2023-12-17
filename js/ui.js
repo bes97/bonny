@@ -11,6 +11,24 @@ $(function() {
     })
   })
 
+  $('.accropen').each(function(){
+    $('.more').on('click',function() {
+      let self = $(this);
+      self.find('.icon').toggleClass("active");
+      $(self.data('target')).toggleClass("active");
+    })
+  })
+  $('.accrclose').each(function(){
+    let accr = $(this);
+    $('.more').on('click',function() {
+      let self = $(this);
+      $(accr).find('.icon').removeClass("active");
+      $(accr).find('.imgtxtbox').removeClass("active");
+      self.find('.icon').addClass("active");
+      $(self.data('target')).addClass("active");
+    })
+  })
+
   setFlowBanner();
      const $counters = $(".scrollon");  //translate
      const exposurePercentage = 20; 
@@ -30,6 +48,11 @@ $(function() {
              }
          });
      }).scroll();
+    //  $(document).bind('scroll', function() {
+    //   if ($(this).scrollTop() >= $('.typing-txt').position().top ) {
+    //      typingfunc();
+    //   }
+    // })
 
      $(".lazy").slick({
       lazyLoad: 'ondemand',
@@ -45,8 +68,44 @@ $(function() {
       arrows: false,
       dots: true,
     });
+    $(".center").slick({
+      arrows: false,
+      dots: false,
+      infinite: true,
+      centerMode: true,
+      autoplay: true,
+      autoplaySpeed: 0,
+      slidesToShow: 4,
+      slidesToScroll: 3,
+      pauseOnHover : false,
+    });
 })
 
+function typingfunc() {
+  var typingBool = false; 
+  var typingIdx=0; 
+  // 타이핑될 텍스트를 가져온다 
+  var typingTxt = $(".typing-txt").text(); 
+
+  typingTxt=typingTxt.split(""); // 한글자씩 자른다. 
+
+  if(typingBool==false){ 
+    // 타이핑이 진행되지 않았다면 
+    typingBool=true;     
+    var tyInt = setInterval(typing,20); // 반복동작 
+  } 
+  function typing(){ 
+    if(typingIdx<typingTxt.length){ 
+      // 타이핑될 텍스트 길이만큼 반복 
+      $(".typing").append(typingTxt[typingIdx]);
+      // 한글자씩 이어준다. 
+      typingIdx++; 
+     } else{ 
+       //끝나면 반복종료 
+      clearInterval(tyInt); 
+     } 
+  }  
+}
 function setFlowBanner() {
   const $wrap = $('.animated-title');
   const $list = $('.animated-title .track');
@@ -79,7 +138,7 @@ function random(min, max) {
   function floatingObject(selector,delay,size){
     gsap.to(selector, random(2,2.5), {
       y: size,
-      repeat: -1,
+      repeat: 1,
       yoyo: true,
       ease: Power1.easeInOut,
       delay: random(0,delay)

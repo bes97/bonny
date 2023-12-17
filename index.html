@@ -20,6 +20,28 @@
       floatingObject('.floating4',0.5,-30);
       floatingObject('.floating5',1.5,-20);
       floatingObject('.floating6',1,20);
+
+      let lastScrollY = 0;
+      window.addEventListener('scroll', e => {
+        const scrollY = window.scrollY;
+        const scrollDown = scrollY > lastScrollY;
+        if (scrollDown) {
+          floatingObject('.floating1',0,30);
+          floatingObject('.floating2',1.5,-30);
+          floatingObject('.floating3',2,20);
+          floatingObject('.floating4',0.5,-30);
+          floatingObject('.floating5',1.5,-20);
+          floatingObject('.floating6',1,20);
+        } else {
+          floatingObject('.floating1',0,0);
+          floatingObject('.floating2',1.5,0);
+          floatingObject('.floating3',2,0);
+          floatingObject('.floating4',0.5,0);
+          floatingObject('.floating5',1.5,0);
+          floatingObject('.floating6',1,0);
+        }
+        lastScrollY = scrollY;
+      });
     })
   </script>
 </head>

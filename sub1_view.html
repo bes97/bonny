@@ -11,21 +11,80 @@
   <script src="js/common.js" type="text/Javascript" charset="UTF-8"></script>
   <script src="js/ui.js" type="text/Javascript" charset="UTF-8"></script>
   <link rel="stylesheet" type="text/css" href="css/sub.css">
+  <style>
+    h2 { margin-bottom:1em; text-align: center;}
+    h3 { margin-bottom:1.5em; text-align: center;}
+    .sec1 { margin-bottom: calc(9vw * 0.8)}
+    .sec1 .imgbox {
+      margin-bottom: 9vw;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .sec1 .txtcont {
+      text-align: center;
+      line-height: 2em;
+    }
+    
+    .sec2 .in {
+      background: url(../img/bonny_back_right.png) no-repeat left 20px bottom / 15vw;
+    }
+    .sec2 .imgbox {position: relative; padding-top: 30px;}
+    .sec2 .imgbox::after { 
+      content: url(img/sub1_view_tape.png); display: block;
+      position: absolute;
+      top: 0; 
+     }
+    .sec2 .imgbox1 { width: 28vw;}
+    .sec2 .imgbox1::after { left: 50%; transform: translate(-50%) scaleX(-1);}
+    .sec2 .imgbox2 { width: 33vw; padding-right: 30px;}
+    .sec2 .imgbox2::after { right: 0;}
+    .sec2 .imgbox3 { width: 23vw;padding-left: 40px;}
+    .sec2 .imgbox3::after { top: 10px;left: 0; transform: rotate(-20deg) scaleX(-1);}
+    .sec2 .grid {
+      display: grid;
+
+      grid-template-areas:
+      "a b"
+      "a c"
+      ". d";
+      grid-row-gap: 0; 
+      grid-column-gap: 20px;
+    }
+    .sec2 .grid .area1 { grid-area: a;}
+    .sec2 .grid .area2 { grid-area: b; height: 20em; text-align: right;}
+    .sec2 .grid .area3 { grid-area: c; position: relative; top: 100px;
+      margin-left: auto;
+      text-align: right;}
+    .sec2 .grid .area4 { grid-area: d; position: relative;}
+
+    @media all and (max-width: 560px) {
+      .sec2 .in { background: none; }
+      .sec2 .grid {display: block;}
+      .sec2 .imgbox1 { width: 100%; }
+      .sec2 .imgbox2 { width: 100%;top: 0 !important;}
+      .sec2 .imgbox3 { width: 100%;top: 0}
+      .sec2 .grid .area2 { height: auto; }
+    }
+  </style>
 </head>
 <body>
   <div id="wrap">
     <header id="header"></header>
     <div id="main">
       <section class="slidewrap">
-        <div class="lazy slider">
+        <div class="lazy slider imgbox">
           <div>
-            <img src="img/main_slide1.png">
+            <img src="img/main_slide7.png">
           </div>
           <div>
-            <img src="img/main_slide2.png">
+            <img src="img/main_slide6.png">
           </div>
           <div>
-            <img src="img/main_slide3.png">
+            <img src="img/main_slide5.png">
+          </div>
+          <div>
+            <img src="img/main_slide4.png">
           </div>
         </div>
         <div class="slidetxt f_calista">
@@ -33,6 +92,43 @@
           <p class="slidetxt_small">Have an unforgettable memory</p>
         </div>
       </section>
+      <section class="sec1 contents">
+        <div class="wpc">
+          <h1 class="scrollon scrollup2">TOUR</h1>
+          <div class="imgbox scrollon scrollup2">
+            <img src="img/sub1_view_img1.png" alt="풀빌라바니 전경사진">
           </div>
+          <div class="imgtxt">
+            <h2 class="scrollon scrollup2">poolvilla bonny</h2>
+            <h3 class="scrollon scrollup2 delay">자연과 조화를 이룬 특별한 휴식의 공간,풀빌라 바니입니다. </h3>
+            <div class="txtcont scrollon scrollup2 delay2">
+              <p>여유로움과 평온이 넘치는 이곳에서는 일상의 소란을 잊고, </p>
+              <p>몸과 마음을 채워가는 특별한 시간을 누려보세요.</p>
+              <p>이곳에서만 느낄 수 있는 오션뷰가 주는 힐링의 아름다움이 여러분을 기다리고 있습니다.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="sec2 contents">
+        <div class="wpc in grid imgbox">
+          <div class="imgbox1 imgbox scrollon scrollup2 area1"><img src="img/sub1_view_img2_1.png"></div>
+          <div class="imgtxt scrollon scrollup2 area2">
+            타이핑미완성
+            <div class="typing-txt">
+              <p >At Poolvilla Bonny, you'll find the opportunity to soothe a weary soul </p>
+              <p>and rejuvenate body and mind with the rich embrace of nature.</p>
+              <p>Experience a unique relaxation that can only be felt here</p>
+              <p>immerse yourself in the beauty of nature within a specially crafted space just for you.</p>
+            </div>
+            <div class="typing"></div>
+            <div>
+              
+            </div>
+          </div>
+          <div class="imgbox2 imgbox scrollon scrollup2 area3"><img src="img/sub1_view_img2_2.png"></div>
+          <div class="imgbox3 imgbox scrollon scrollup2 area4"><img src="img/sub1_view_img2_3.png"></div>
+        </div>
+      </section>
+    </div>
     <footer id="footer" class="scrollon"></footer>
   </div>
