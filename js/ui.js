@@ -78,8 +78,8 @@ $(function() {
       pauseOnHover : false,
       easing: 'linear',
     });
-})
 
+    })
 window.addEventListener('DOMContentLoaded', function(){
 
   let roller = document.querySelector('.roller');
