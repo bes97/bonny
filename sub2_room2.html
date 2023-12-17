@@ -55,13 +55,21 @@
     .sec2 .reserv_cont div:nth-child(3) { position: relative;left: -5vw;top: 20vw;z-index:3}
     .sec2 .reserv_cont div:nth-child(4) { position: relative;left: 0px;top: 40vw;z-index:4}
     .sec2 .in { position: relative; }
-
+    .sec2 .typewrap { position: absolute; top: 20%}
+    .sec2 .typingtxt1 { overflow: hidden;}
+    .sec2 .typingtxt1 p { width: 200%; position: relative; font-size: 2vw; color: #cccccc90;line-height: 2em; }
+    .sec2 .typingtxt1-2 { left: 30%; }
+    .typingtxt1-2.typing-ani.active::after { animation-delay: 2s; }
+    #villa .bigtxt { font-size: 4.7vw; }
 
     @media all and (max-width: 560px) {
       .sec1 .grid { display: block; height: auto; }
       .sec1 .area1 { margin-bottom: 50px; }
       .rightbox { width: 100%; }
       .leftbox { width: 100%; }
+      .sec2 .typingtxt1 { overflow: hidden;}
+      .sec2 .typingtxt1 p { width: 500%; position: relative;font-size: 1.3rem}
+      .sec2 .typingtxt1-2 { left: 0; }
     }
   </style>
   <script>
@@ -95,7 +103,7 @@
       <section class="slidewrap">
         <div class="lazy slider">
           <div>
-            <img src="img/main_slide1.png">
+            <img src="img/sub2_room2_slide1.png">
           </div>
           <div>
             <img src="img/main_slide2.png">
@@ -114,7 +122,7 @@
         <div class="wpc">
           <h1 class="scrollon scrollup2">INFORMATION</h1>
           <div class="inforoom grid">
-            <div class="leftbox area1 imgbox">
+            <div class="leftbox area1 imgbox scrollon delay">
               <img src="img/sub2_room2_img.png" alt="풀빌라A사진">
             </div>
             <div class="reser area2 flex-vcenter">
@@ -124,11 +132,11 @@
                   <p>맑고 푸른 바다가 펼쳐지는 특별한 공간에서 최고의 휴식을 즐겨보세요. </p>
                   <p>풍부한 감성과 고요한 아름다움이 어우러진 특별한 경험을 제공해드립니다.</p>
                 </div>
-                <button class="btn_square scrollon scrollup2 delay">RESERVATION</button>
+                <button class="btn_square scrollon scrollup2 delay3">RESERVATION</button>
               </div>
             </div>
             <div class="price area3">
-              <ul class="accrclose scrollon delay">
+              <ul class="accrclose scrollon delay3">
                 <li>
                   <div class="more" data-target="#list-item1">
                     <p>price</p>
@@ -190,13 +198,11 @@
         <div class="wpc">
           <h1 class="scrollon scrollup2">POOLVILLA <span class="bigtxt">A</span></h1>
           <div class="in">
-            <div class="imgtxt scrollon scrollup2 area2">
-              타이핑 미완성
-              <div class="typing-txt">
-                <p>If you long to experience the special moments unfolding in a place adorned by the clear, azure sea,</p>
-                <p>then the perfect sanctuary for your relaxation awaits right here. in the beauty of nature within a specially crafted space just for you.</p>
+            <div class="imgtxt scrollon scrollup2 area2 typewrap">
+              <div class="typingtxt1">
+                <p class="typingtxt1-1 scrollon typing-ani">If you long to experience the special moments unfolding in a place adorned by the clear, azure sea,</p>
+                <p class="typingtxt1-2 scrollon typing-ani">then the perfect sanctuary for your relaxation awaits right here. in the beauty of nature within a specially crafted space just for you.</p>
               </div>
-              <div class="typing"></div>
             </div>
             <div class="scrollon reserv_cont">
               <div class="floating1"><img src="img/sub2_room2_a1.png"></div>

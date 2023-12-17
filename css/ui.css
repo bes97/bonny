@@ -23,6 +23,7 @@
 .scrollon.scrolldown { transform: translate(0, -50px); }
 .scrollon.scrollleft { transform: translate(100px, 0); }
 .scrollon.scrollleft50 { transform: translate(50px, 0); }
+.scrollon.scrollleftend { transform: translate(100%, 0); }
 .scrollon.scrollright { transform: translate(-100px, 0); }
 .scrollon .moving-outline circle {
   stroke-dasharray: 1320;
@@ -30,6 +31,15 @@
 .scrollon.active .moving-outline circle{ animation: dash 1s linear forwards; }
 .circle_txt.scrollon .circle_arr{ width: 50%; opacity: 0  ;}
 .circle_txt.scrollon.active .circle_arr { animation: toright 1s 1s linear forwards; }
+
+.typing-ani { position: relative;}
+.typing-ani::after {content: '';display:block;width: 100%; height:100%;background-color: var(--background);
+  position: absolute;top: 0;right:0;}
+.typing-ani.active::after { animation: 3s 0.5s typingeffct linear forwards; }
+
+@keyframes typingeffct {
+  to { width: 0; }
+}
 
 @keyframes dash {
   from { stroke-dashoffset: 1320;}
@@ -81,6 +91,50 @@
   to { width: 100%; }
 }
 
+.rollerwrap {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.roller .rollerul {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.roller {
+  position: absolute;
+  height: 100%;
+}
+.roller.original {
+  animation: 33s linear 0s infinite normal forwards running rollingleft1;
+}
+.roller.clone {
+  animation: 33s linear 0s infinite normal none running rollingleft2;
+}
+@keyframes rollingleft1 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+      transform: translateX(-100%);
+  }
+  50.01% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+@keyframes rollingleft2 {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+      transform: translateX(-200%);
+  }
+}
 .typing-txt{
   display: none;
 }

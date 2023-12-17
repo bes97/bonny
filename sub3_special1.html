@@ -13,16 +13,18 @@
   <link rel="stylesheet" type="text/css" href="css/sub.css">
   <style>
     h1 { margin-bottom: 0;}
-    .sec1 { margin-bottom: calc(9vw * 0.8)}
     .sec1 .txtcont { text-align: center; line-height: 2em;}
     .sec1 .imgbox { padding: 0 10vw; margin-top: 5vw; }
-    .centerslidewrap { position: relative; margin-bottom: calc(9vw * 0.8)}
+    .centerslidewrap { position: relative; margin-bottom: 10vw; }
     .centerslidewrap .txt { 
       position: absolute;top: 1em; left: 50%; transform: translateX(-50%);
       z-index: 9999;width: 100%;
       font-weight: 400;font-size: 2vw;color: #ffffff;text-align: center;}
+    .centerslidewrap img {width: 100%;}
+    .centerslidewrap .rollerwrap { height: 40vw; }
+    .centerslidewrap .rollerwrap .rollerul > div { padding: 0 20px;}
     .sec2 { margin-bottom: calc(9vw * 0.8)  }
-    .sec2 .titwrap { text-align: right; padding-bottom: calc(9vw * 0.5);margin-bottom: calc(9vw * 0.5); }
+    .sec2 .titwrap { text-align: right; padding-bottom: calc(9vw * 0.5);margin-bottom: calc(9vw * 0.5);padding-right: 20px; }
     .sec2 .titwrap::after { 
       content: '';display: block;
       position: absolute; right:0; bottom: 0;
@@ -31,6 +33,11 @@
     }
     .sec2 .titwrap.active::after { width: 80vw }
     #offer { border: none;}
+    .typingtxt2.typing-ani.active::after { animation-delay: 1.5s; }
+    .rollerul > div { width: 25vw;}
+    @media all and (max-width: 560px) {
+      .sec1 .imgbox { padding: 0; margin-top: 5vw; }
+    }
   </style>
 </head>
 <body>
@@ -56,7 +63,7 @@
       </section>
       <section class="sec1 contents">
         <div class="wpc">
-          <h1 class="scrollon scrollup2">TOUR</h1>
+          <h1 class="scrollon scrollup2">OCEAN VIEW</h1>
           <div class="txtcont scrollon scrollup2 delay2">
             <p>2층 테라스 및 침실에서 오션뷰를 즐길 수 있습니다</p>
             <p>고요한 해안을 감상할 수있는 오션뷰 객실에서, 마음의 평화를 얻어가세요.   </p>
@@ -71,35 +78,39 @@
           <p>If you long to experience the special moments with the clear, azure sea, </p>
           <p>then the perfect sanctuary for your relaxation awaits right here.</p>
         </div>
-        <div class="center slider">
-          <div>
-            <img src="img/sub3_special_thum1.png">
-          </div>
-          <div>
-            <img src="img/sub3_special_thum2.png">
-          </div>
-          <div>
-            <img src="img/sub3_special_thum3.png">
-          </div>
-          <div>
-            <img src="img/sub3_special_thum4.png">
-          </div>
-          <div>
-            <img src="img/sub3_special_thum5.png">
-          </div>
-          <div>
-            <img src="img/sub3_special_thum6.png">
+        <div class="rollerwrap">
+          <div class="roller">
+            <div class="rollerul">
+              <div>
+                <img src="img/sub3_special_thum1.png">
+              </div>
+              <div>
+                <img src="img/sub3_special_thum2.png">
+              </div>
+              <div>
+                <img src="img/sub3_special_thum3.png">
+              </div>
+              <div>
+                <img src="img/sub3_special_thum4.png">
+              </div>
+              <div>
+                <img src="img/sub3_special_thum5.png">
+              </div>
+              <div>
+                <img src="img/sub3_special_thum6.png">
+              </div>
+            </div>
           </div>
         </div>
+
       </section>
       <section class="sec2">
         <div class="titwrap scrollon">
           <p class="tit f_calista scrollon delay2 scrollup">POOLVILLA BONNY</p>
-          <div class="tittxt scrollon delay3">
-            타이핑 미완성
-              <div class="typing-txt">
-                <p>poolvilla bonny  gives you a special time to fill your body and mind. Feel the scent of travel with the sound of the sea. </p>
-                <p>the beauty of ocean view healing that can only be felt here is waiting for you.</p>
+          <div class="tittxt typewrap">
+              <div class="typingtxt">
+                <p class="typingtxt1 scrollon typing-ani">poolvilla bonny  gives you a special time to fill your body and mind. Feel the scent of travel with the sound of the sea. </p>
+                <p class="typingtxt2 scrollon typing-ani">the beauty of ocean view healing that can only be felt here is waiting for you.</p>
               </div>
               <div class="typing"></div>
           </div>
@@ -112,7 +123,7 @@
         <div class="in winside pt100">
             <div class="tit">SPECIAL OFFER</tit>
             <div class="fntab hovertab">
-              <div class="tabnav">
+              <div class="tabnav scrollon scrollright">
                 <ul>
                     <li><i class="num">I</i><p class="tabtxt" data-cont="#cate01">Ocean View Place</p></li>
                     <li class="focus"><i class="num">II</i><p class="tabtxt" data-cont="#cate02">Indoor WarmPool</p></li>
@@ -121,7 +132,7 @@
                     <li><i class="num">V</i><p class="tabtxt" data-cont="#cate05">Amenity & bedding</p></li>
                   </ul>
               </div>
-              <div class="tabcont">
+              <div class="tabcont scrollon scrollleft">
                 <div id="cate01" class="tabitem imgwrap"><img src="img/main_specialcate01.png" class="tabcont-img"/></div>
                 <div id="cate02" class="tabitem imgwrap"><img src="img/main_specialcate02.png" class="tabcont-img"/></div>
                 <div id="cate03" class="tabitem imgwrap"><img src="img/main_specialcate03.png" class="tabcont-img"/></div>

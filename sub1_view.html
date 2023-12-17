@@ -24,6 +24,7 @@
     .sec1 .txtcont {
       text-align: center;
       line-height: 2em;
+      word-break: keep-all;
     }
     
     .sec2 .in {
@@ -39,7 +40,7 @@
     .sec2 .imgbox1::after { left: 50%; transform: translate(-50%) scaleX(-1);}
     .sec2 .imgbox2 { width: 33vw; padding-right: 30px;}
     .sec2 .imgbox2::after { right: 0;}
-    .sec2 .imgbox3 { width: 23vw;padding-left: 40px;}
+    .sec2 .imgbox3 { width: 23vw;padding-left: 40px;left: 20%}
     .sec2 .imgbox3::after { top: 10px;left: 0; transform: rotate(-20deg) scaleX(-1);}
     .sec2 .grid {
       display: grid;
@@ -57,15 +58,29 @@
       margin-left: auto;
       text-align: right;}
     .sec2 .grid .area4 { grid-area: d; position: relative;}
-
+    .sec2 .imgtxt { overflow-x: hidden;}
+    .sec2 .imgtxt-in { margin-bottom: 2em; line-height: 1.5em;}
     @media all and (max-width: 560px) {
       .sec2 .in { background: none; }
-      .sec2 .grid {display: block;}
+      .sec2 .grid {
+        /* display: block; */
+        grid-template-areas:
+      "a"
+      "c"
+      "d"
+      "b";
+      }
+      .sec2 .grid .area2 { margin-top: 50px;text-align: left;}
       .sec2 .imgbox1 { width: 100%; }
       .sec2 .imgbox2 { width: 100%;top: 0 !important;}
       .sec2 .imgbox3 { width: 100%;top: 0}
       .sec2 .grid .area2 { height: auto; }
+      .sec2 .imgbox3 { left: 0}
     }
+    .imgtxt-in .typing-ani.active::after { animation-duration: 1.5s; }
+    .imgtxt-in2.typing-ani.active::after { animation-delay: 2s; }
+    .imgtxt-in3.typing-ani.active::after { animation-delay: 3s; }
+    .imgtxt-in4.typing-ani.active::after { animation-delay: 4.5s; }
   </style>
 </head>
 <body>
@@ -109,20 +124,17 @@
           </div>
         </div>
       </section>
-      <section class="sec2 contents">
-        <div class="wpc in grid imgbox">
+      <section class="sec2">
+        <div class="wpc in grid">
           <div class="imgbox1 imgbox scrollon scrollup2 area1"><img src="img/sub1_view_img2_1.png"></div>
-          <div class="imgtxt scrollon scrollup2 area2">
-            타이핑미완성
-            <div class="typing-txt">
-              <p >At Poolvilla Bonny, you'll find the opportunity to soothe a weary soul </p>
-              <p>and rejuvenate body and mind with the rich embrace of nature.</p>
-              <p>Experience a unique relaxation that can only be felt here</p>
-              <p>immerse yourself in the beauty of nature within a specially crafted space just for you.</p>
+          <div class="imgtxt area2 typewrap flex-end">
+            <div class="imgtxt-in">
+              <p class="scrollon typing-ani imgtxt-in1">At Poolvilla Bonny, you'll find the opportunity to soothe a weary soul </p>
+              <p class="scrollon typing-ani imgtxt-in2">and rejuvenate body and mind with the rich embrace of nature.</p>
             </div>
-            <div class="typing"></div>
-            <div>
-              
+            <div class="imgtxt-in">
+              <p class="scrollon typing-ani imgtxt-in3">Experience a unique relaxation that can only be felt here</p>
+              <p class="scrollon typing-ani imgtxt-in4">immerse yourself in the beauty of nature within a specially crafted space just for you.</p>
             </div>
           </div>
           <div class="imgbox2 imgbox scrollon scrollup2 area3"><img src="img/sub1_view_img2_2.png"></div>

@@ -50,7 +50,24 @@ $(function() {
                  $el.removeClass('active');
              }
          });
+         if ($('.typewrap').hasClass('active')) {
+          typingfunc('.typingtxt1','.typingani1');
+          typingfunc('.typingtxt2','.typingani2');
+          typingfunc('.typingtxt3','.typingani3');
+          typingfunc('.typingtxt4','.typingani4');
+         } else {
+          $('.typing').text('')
+         }
+        //  $('.typewrap.active').each(function(){
+        //   // typingfunc('.typing-txt','.typing');
+
+        // })
      }).scroll();
+
+   
+
+    
+
 
      $(".lazy").slick({
       lazyLoad: 'ondemand',
@@ -70,32 +87,41 @@ $(function() {
       arrows: false,
       dots: false,
       infinite: true,
+      centerMode: true,
       autoplay: true,
       autoplaySpeed: 0,
-      speed: 3000,
       slidesToShow: 4,
       slidesToScroll: 3,
       pauseOnHover : false,
-      easing: 'linear',
     });
 })
 
-window.addEventListener('DOMContentLoaded', function(){
+function typingfunc(typingtxtclass, typingclass) {
+  var typingBool = false; 
+  var typingIdx=0; 
+  // 타이핑될 텍스트를 가져온다 
+  //var typingTxt = $(".typing-txt").text(); 
+  var typingTxt = $(typingtxtclass).text(); 
+  typingTxt=typingTxt.split(""); // 한글자씩 자른다. 
 
-  let roller = document.querySelector('.roller');
-  roller.id = 'roller1';
-
-  let clone = roller.cloneNode(true);
-  clone.id = 'roller2';
-  document.querySelector('.rollerwrap').appendChild(clone);
-
-  document.querySelector('#roller1').style.left = '0px';
-  document.querySelector('#roller2').style.left = document.querySelector('.roller .rollerul').offsetWidth+'px';
-
-  roller.classList.add('original');
-  clone.classList.add('clone');
-});
-
+  if(typingBool==false){ 
+    // 타이핑이 진행되지 않았다면 
+    typingBool=true;     
+    var tyInt = setInterval(typing,20); // 반복동작 
+  } 
+  function typing(){ 
+    if(typingIdx<typingTxt.length){ 
+      // 타이핑될 텍스트 길이만큼 반복 
+      //$(".typing").append(typingTxt[typingIdx]);
+      $(typingclass).append(typingTxt[typingIdx]);
+      // 한글자씩 이어준다. 
+      typingIdx++; 
+     } else{ 
+       //끝나면 반복종료 
+      clearInterval(tyInt); 
+     } 
+  }  
+}
 function setFlowBanner() {
   const $wrap = $('.animated-title');
   const $list = $('.animated-title .track');
@@ -128,7 +154,7 @@ function random(min, max) {
   function floatingObject(selector,delay,size){
     gsap.to(selector, random(2,2.5), {
       y: size,
-      repeat: 2,
+      repeat: 1,
       yoyo: true,
       ease: Power1.easeInOut,
       delay: random(0,delay)
