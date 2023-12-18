@@ -3,6 +3,8 @@ body { padding-bottom: 700px; }
 .slick-dots { bottom: 9vh;}
 .slidetxt { bottom: 10vh; font-size: 3.5vw;}
 
+.hovertab { width: 100vw; overflow: hidden;}
+
 .reserv_cont { position: relative;}
 .reserv_cont .left_cont {
   position: absolute;
