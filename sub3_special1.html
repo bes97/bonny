@@ -19,7 +19,7 @@
     .centerslidewrap .txt { 
       position: absolute;top: 1em; left: 50%; transform: translateX(-50%);
       z-index: 9999;width: 100%;
-      font-weight: 400;font-size: 2vw;color: #ffffff;text-align: center;}
+      font-weight: 400;font-size: 2vw;color: #ffffff;text-align: center;line-height: 2em;}
     .centerslidewrap img {width: 100%;}
     .centerslidewrap .rollerwrap { height: 40vw; }
     .centerslidewrap .rollerwrap .rollerul > div { padding: 0 20px;}
@@ -31,14 +31,24 @@
       width: 0;height: 1px;background-color: var(--gray);
       transition: width 1s;
     }
+    .sec2 .tittxt  { color: #626262; }
     .sec2 .titwrap.active::after { width: 80vw }
     #offer { border: none;}
-    .hovertab { width: 100vw; overflow: hidden; }
+    .hovertab { width: 100%; overflow: hidden; }
     .typingtxt2.typing-ani.active::after { animation-delay: 1.5s; }
     .rollerul > div { width: 25vw;}
     @media all and (max-width: 560px) {
       .sec1 .imgbox { padding: 0; margin-top: 5vw; }
+      .sec1 .txtcont { margin-top: 5vw;margin-bottom: 10vw;font-size: 0.9rem;text-align: center; line-height: 1.5em;}
       .rollerul > div { width: 50vw;}
+      .centerslidewrap .txt { font-size: 0.8rem; }
+      .centerslidewrap .txt p { display: inline; }
+      .titwrap .tittxt {
+          font-size: 0.9rem;
+          line-height: 1.3em;
+          font-family: "Pretendard";
+          font-weight: 400;
+      }
     }
   </style>
 </head>
@@ -108,7 +118,7 @@
       </section>
       <section class="sec2">
         <div class="titwrap scrollon">
-          <p class="tit f_calista scrollon delay2 scrollup">POOLVILLA BONNY</p>
+          <p class="tit f_calista scrollon scrollup">POOLVILLA BONNY</p>
           <div class="tittxt typewrap">
               <div class="typingtxt">
                 <p class="typingtxt1 scrollon typing-ani">poolvilla bonny  gives you a special time to fill your body and mind. Feel the scent of travel with the sound of the sea. </p>
@@ -117,7 +127,7 @@
               <div class="typing"></div>
           </div>
         </div>
-        <div class="scrollon delay4 scrolldown imgbox">
+        <div class="scrollon delay2 scrolldown imgbox">
           <img src="img/sub3_special_img2.png" alt="바다경치사진">
         </div>
       </section>

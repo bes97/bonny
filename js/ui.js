@@ -1,13 +1,18 @@
 $(function() {
-  let tabcont = $('.tabnav .focus .tabtxt').data('cont');
-  $(tabcont).show();
+
   $('.fntab').each(function(){
-      $('.tabnav li').on("mouseenter", function(){
+    let self = $(this);
+    let tabcont = self.find('.tabnav .focus .tabtxt').data('cont');
+    let last_tabcont = tabcont;
+    $(tabcont).show().css({'z-index':1});
+      self.find('.tabnav > ul > li').on("mouseenter", function(){
       tabcont = $(this).find('.tabtxt').data('cont');
-      $('.tabnav li').removeClass('focus');
-      $('.tabcont .tabitem').fadeOut(300);
+      self.find('.tabnav > ul > li').removeClass('focus');
+      $(last_tabcont).fadeOut(2000).css({'z-index':1});
       $(this).addClass('focus');
-      $(tabcont).fadeIn(300);
+      $(tabcont).fadeIn(2000).css({'z-index':1});
+      last_tabcont = tabcont;
+      console.log(last_tabcont)
     })
   })
 
@@ -18,20 +23,53 @@ $(function() {
       $(self.data('target')).toggleClass("active");
     })
   })
-  $('.accrclose').each(function(){
-    let accr = $(this);
-    $('.more').on('click',async function() {
-      let self = $(this);
-      $(accr).find('.icon').removeClass("active");
-      $(accr).find('.imgtxtbox').removeClass("active");
-      await sleep(500);
-      self.find('.icon').addClass("active");
-      $(self.data('target')).addClass("active");
+    // $('.accrclose').each(function(){
+    //   let accr = $(this);
+    //   $('.more').on('click',async function() {
+    //     let self = $(this);
+    //     $(accr).find('.icon').removeClass("active");
+    //     $(accr).find('.imgtxtbox').removeClass("active");
+    //     await sleep(500);
+    //     self.find('.icon').addClass("active");
+    //     $(self.data('target')).addClass("active");
+    //   })
+    // })
+    // function sleep(ms) {
+    //   return new Promise(resolve => setTimeout(resolve, ms));
+    // }
+   //내용 토글
+   const tour_toggle_event = function(){
+    const container = $(".info-container"),
+    info_wrap = container.find("li"),
+    closetype = container.find(".closetype"),
+    tit = info_wrap.find(".acctitwrap")
+
+    info_wrap.each(function(){
+        if($(this).hasClass("active")){
+            $(this).find(".imgtxtbox").css("height",$(this).find(".imgtxtbox p").innerHeight())
+        }
     })
-  })
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    tit.on("click",function(){   
+        const this_parent_info = $(this).parents(".list_item");
+       
+        if(this_parent_info.hasClass("active")){
+            this_parent_info.removeClass("active")
+            this_parent_info.find(".imgtxtbox").css("height",0)
+            console.log('hasactive::',this_parent_info)
+        }else{
+            if (closetype) {
+              container.find(".imgtxtbox").css("height",0);
+              container.find(".list_item").removeClass("active");
+            }
+            this_parent_info.addClass("active")
+            this_parent_info.find(".imgtxtbox").css("height",this_parent_info.find(".imgtxtbox .imgtxtbox_in").innerHeight())
+        }
+    })
   }
+  if($(".tour-wrap").length > 0){
+      tour_toggle_event()
+  }
+
   setFlowBanner();
      const $counters = $(".scrollon");  //translate
      const exposurePercentage = 20; 
@@ -58,11 +96,12 @@ $(function() {
       slideToScroll: 1,
       infinite: true,
       autoplay: true,
-      autoplaySpeed: 3000,
+      autoplaySpeed: 7000,
       fade: true,
       swiper: false,
       pauseOnHover : false,
-      draggable: false,
+      draggable: true,
+      touchMove : true, 
       arrows: false,
       dots: true,
     });
@@ -79,7 +118,17 @@ $(function() {
       easing: 'linear',
     });
 
-    })
+    //패럴랙스
+    var wd = $(window);
+    $('.paral').each(function(){
+      var bg = $(this);
+      wd.scroll(function(){
+        var yPos = -(wd.scrollTop() / 1.5); 
+        var coords = '50%' + yPos + 'px';
+        bg.css({backgroundPosition:coords});
+      });
+    });
+  })
 window.addEventListener('DOMContentLoaded', function(){
   if (document.querySelector('.rollerwrap')) {
     let roller = document.querySelector('.roller');

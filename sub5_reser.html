@@ -44,7 +44,16 @@
     .sec3 .img2 { position: relative; top: -100px; width: 60%; }
     .sec3 .img3 { width: 50%; margin-left: auto;}
     .sec4 .abs { position: absolute; width: 100%; height: 100%; 
-      top: 0; left: 0; color: #ffffff;font-size: 2vw; line-height: 2em;}
+      top: 0; left: 0; color: #ffffff;font-size: 1.5vw; line-height: 2em;}
+    #sky {
+      background:url('img/sub5_reservation_img6_2.png') center;
+      background-size:120%;
+      position:relative;
+      width:100%;
+      height:70vh;
+      margin:0 auto;	
+    }		
+    
     .sec5 { word-break: keep-all;}
     .sec5 .titwrap { text-align: center; margin-bottom: 5vw}
     .sec5 .txtcont {margin-bottom: 5vw;text-align: center;line-height: 2em; }
@@ -61,8 +70,18 @@
     }
     @media all and (max-width: 560px) {
       [class ^="flex-"]{ display: block; }
+      .contents {
+        padding-top:50px;
+        padding-bottom: 50px;
+      }
       .sec1 .leftwrap { margin-bottom: 10vw; }
       .sec4 .abs {font-size: 0.7rem;line-height: 1.5em;}
+       h3 { font-size: 1.3rem}
+       h4 { font-size: 1rem}
+       .sec3 .titwrap { margin-bottom: 50px; }
+       .sec3 .txtbox { margin-bottom: 50px; }
+       #sky { height: 40vh; background-size:150%;}
+       .sec5 .txtcont, .sec5 .subcont { font-size: 0.9rem; line-height: 1.5em; margin-top: 50px; margin-bottom: 50px;}
     }
   </style>
 </head>
@@ -86,10 +105,10 @@
             <div class="rightwrap flex-vcenter">
               <div>
                 <div class="titwrap">
-                  <h3 class="scrollon scrollup delay f_calista">reservation information</h3>
-                  <h3 class="scrollon scrollup delay2">풀빌라바니 예약안내</h3>
+                  <h3 class="scrollon scrollup f_calista">reservation information</h3>
+                  <h3 class="scrollon scrollup delay01">풀빌라바니 예약안내</h3>
                 </div>
-                <div class="imgtxtbox_in scrollon scrollup delay3">
+                <div class="imgtxtbox_in scrollon scrollup delay02">
                     <div class="flex-left">
                       <span class="span1">예약방법 :</span>
                       <span class="span2">실시간 + 전화 (상담시간 : 오전 9시 ~ 오후 9시까지) </span>
@@ -101,7 +120,7 @@
                       <span class="span2">농협 301-0337-4695-61 (예금주:최지환)</span>
                     </div>
                 </div>
-                <div class="imgtxtbox_in imgtxtbox_in2  scrollon scrollup delay4">
+                <div class="imgtxtbox_in imgtxtbox_in2  scrollon scrollup delay03">
                   <div class="flex-leftwrap">
                     <p class="slash"><span class="span1">주중 :</span><span class="span2 ">일요일~목요일</span></p>
                     <p class="slash"><span class="span1">금요일 : </span><span class="span2 ">금요일요금</span></p>
@@ -273,7 +292,7 @@
                   <h3 class="scrollon scrollup">풀빌라바니 이용안내</h3>
                 </div>
                 <div class="imgtxtbox_in">
-                  <div class="txtbox scrollon scrollup delay01">
+                  <div class="txtbox scrollon scrollup delay1">
                     <h4>추가인원안내</h4>
                     <ul class="txt">
                       <li><p>기준인원 초과 시, 추가요금 발생</p></li>
@@ -363,7 +382,8 @@
         </div>
       </section>
       <section class="sec4 imgbox">
-        <img src="img/sub5_reservation_img6.png" alt="풀빌라인테리어사진">
+        <!-- <img src="img/sub5_reservation_img6.png" alt="풀빌라인테리어사진"> -->
+        <div id="sky" class="paral"></div>
         <div class="abs f_calista flex-vcenter">
           <div class="winside">
             <p class="scrollon scrollright">Escape the noise of everyday life and experience the ultimate healing at poolvilla bonny. </p>

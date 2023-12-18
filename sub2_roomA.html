@@ -57,14 +57,17 @@
     .sec2 .in { position: relative; }
     .sec2 .typewrap { position: absolute; top: 20%}
     .sec2 .typingtxt1 { overflow: hidden;}
-    .sec2 .typingtxt1 p { width: 200%; position: relative; font-size: 2vw; color: #cccccc90;line-height: 2em; }
+    .sec2 .typingtxt1 p { width: 200%; position: relative; font-size: 2vw; color: #cccccc90;line-height: 1.5em; }
     .sec2 .typingtxt1-2 { left: 30%; }
+    .typing-ani.active::after { animation-duration: 6s;}
     .typingtxt1-2.typing-ani.active::after { animation-delay: 2s; }
     #villa .bigtxt { font-size: 4.7vw; }
 
     @media all and (max-width: 560px) {
       .sec1 .grid { display: block; height: auto; }
       .sec1 .area1 { margin-bottom: 50px; }
+      .sec1 .reser { text-align: center; }
+      .sec1 .txtcont { font-size: 0.9rem;text-align: center;}
       .rightbox { width: 100%; }
       .leftbox { width: 100%; }
       .sec2 .typingtxt1 { overflow: hidden;}
@@ -83,13 +86,13 @@
         const scrollY = window.scrollY;
         const scrollDown = scrollY > lastScrollY;
         if (scrollDown) {
-          floatingObject('.floating1',0,30);
-          floatingObject('.floating3',2,30);
-          floatingObject('.floating4',0.5,-50);
+          floatingObject('.floating1',0,50);
+          floatingObject('.floating3',0,50);
+          floatingObject('.floating4',0,50);
         } else {
           floatingObject('.floating1',0,0);
-          floatingObject('.floating3',2,0);
-          floatingObject('.floating4',0.5,0);
+          floatingObject('.floating3',0,0);
+          floatingObject('.floating4',0,0);
         }
         lastScrollY = scrollY;
       });
@@ -118,9 +121,9 @@
         </div>
       </section>
       
-      <section class="sec1 contents">
+      <section class="sec1 contents tour-wrap">
         <div class="wpc">
-          <h1 class="scrollon scrollup2">INFORMATION</h1>
+          <h1 class="scrollon scrollup2 h1_5">INFORMATION</h1>
           <div class="inforoom grid">
             <div class="leftbox area1 imgbox scrollon delay">
               <img src="img/sub2_room2_img.png" alt="풀빌라A사진">
@@ -132,13 +135,15 @@
                   <p>맑고 푸른 바다가 펼쳐지는 특별한 공간에서 최고의 휴식을 즐겨보세요. </p>
                   <p>풍부한 감성과 고요한 아름다움이 어우러진 특별한 경험을 제공해드립니다.</p>
                 </div>
-                <button class="btn_square scrollon scrollup2 delay3">RESERVATION</button>
+                <div class="btnwrap scrollon scrollup2 delay3">
+                  <button class="btn_square ">RESERVATION</button>
+                </div>
               </div>
             </div>
-            <div class="price area3">
-              <ul class="accrclose scrollon delay3">
-                <li>
-                  <div class="more" data-target="#list-item1">
+            <div class="price area3 info-container">
+              <ul class="accrclose scrollon delay3 info-list-wrap closetype">
+                <li class="list_item">
+                  <div class="acctitwrap more" data-target="#list-item1">
                     <p>price</p>
                     <button class="icon">
                       <span class="material-symbols-outlined add">add</span>
@@ -151,8 +156,8 @@
                     </div>
                   </div>
                 </li>
-                <li>
-                  <div class="more"  data-target="#list-item2">
+                <li class="list_item">
+                  <div class="acctitwrap more"  data-target="#list-item2">
                     <p>roomtype</p>
                     <button class="icon">
                       <span class="material-symbols-outlined add">add</span>
@@ -166,8 +171,8 @@
                     </div>
                   </div>
                 </li>
-                <li>
-                  <div class="more" data-target="#list-item3">
+                <li class="list_item">
+                  <div class="acctitwrap more" data-target="#list-item3">
                     <p>amenities</p>
                     <button class="icon">
                       <span class="material-symbols-outlined add">add</span>
@@ -199,7 +204,7 @@
           <h1 class="scrollon scrollup2">POOLVILLA <span class="bigtxt">A</span></h1>
           <div class="in">
             <div class="imgtxt scrollon scrollup2 area2 typewrap">
-              <div class="typingtxt1">
+              <div class="typingtxt1 f_calista">
                 <p class="typingtxt1-1 scrollon typing-ani">If you long to experience the special moments unfolding in a place adorned by the clear, azure sea,</p>
                 <p class="typingtxt1-2 scrollon typing-ani">then the perfect sanctuary for your relaxation awaits right here. in the beauty of nature within a specially crafted space just for you.</p>
               </div>
