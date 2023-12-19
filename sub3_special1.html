@@ -12,50 +12,12 @@
   <script src="js/ui.js" type="text/Javascript" charset="UTF-8"></script>
   <link rel="stylesheet" type="text/css" href="css/sub.css">
   <style>
-    h1 { margin-bottom: 0;}
-    .sec1 .txtcont { text-align: center; line-height: 2em;}
-    .sec1 .imgbox { padding: 0 10vw; margin-top: 5vw; }
-    .centerslidewrap { position: relative; margin-bottom: 10vw; }
-    .centerslidewrap .txt { 
-      position: absolute;top: 1em; left: 50%; transform: translateX(-50%);
-      z-index: 9999;width: 100%;
-      font-weight: 400;font-size: 2vw;color: #ffffff;text-align: center;line-height: 2em;}
-    .centerslidewrap img {width: 100%;}
-    .centerslidewrap .rollerwrap { height: 40vw; }
-    .centerslidewrap .rollerwrap .rollerul > div { padding: 0 20px;}
-    .sec2 { margin-bottom: calc(9vw * 0.8)  }
-    .sec2 .titwrap { text-align: right; padding-bottom: calc(9vw * 0.5);margin-bottom: calc(9vw * 0.5);padding-right: 20px; }
-    .sec2 .titwrap::after { 
-      content: '';display: block;
-      position: absolute; right:0; bottom: 0;
-      width: 0;height: 1px;background-color: var(--gray);
-      transition: width 1s;
-    }
-    .sec2 .tittxt  { color: #626262; }
-    .sec2 .titwrap.active::after { width: 80vw }
-    #offer { border: none;}
-    .hovertab { width: 100%; overflow: hidden; }
-    .typingtxt2.typing-ani.active::after { animation-delay: 1.5s; }
-    .rollerul > div { width: 25vw;}
-    @media all and (max-width: 560px) {
-      .sec1 .imgbox { padding: 0; margin-top: 5vw; }
-      .sec1 .txtcont { margin-top: 5vw;margin-bottom: 10vw;font-size: 0.9rem;text-align: center; line-height: 1.5em;}
-      .rollerul > div { width: 50vw;}
-      .centerslidewrap .txt { font-size: 0.8rem; }
-      .centerslidewrap .txt p { display: inline; }
-      .titwrap .tittxt {
-          font-size: 0.9rem;
-          line-height: 1.3em;
-          font-family: "Pretendard";
-          font-weight: 400;
-      }
-    }
   </style>
 </head>
 <body>
   <div id="wrap">
     <header id="header"></header>
-    <div id="main">
+    <div id="main" class="sub3_special">
       <section class="slidewrap">
         <div class="lazy slider">
           <div>
@@ -137,8 +99,8 @@
             <div class="fntab hovertab">
               <div class="tabnav scrollon scrollright">
                 <ul>
-                    <li><i class="num">I</i><p class="tabtxt" data-cont="#cate01">Ocean View Place</p></li>
-                    <li class="focus"><i class="num">II</i><p class="tabtxt" data-cont="#cate02">Indoor WarmPool</p></li>
+                    <li class="focus"><i class="num">I</i><p class="tabtxt" data-cont="#cate01">Ocean View Place</p></li>
+                    <li><i class="num">II</i><p class="tabtxt" data-cont="#cate02">Indoor WarmPool</p></li>
                     <li><i class="num">III</i><p class="tabtxt" data-cont="#cate03">Barbecue</p></li>
                     <li><i class="num">IV</i><p class="tabtxt" data-cont="#cate04">Near the Sea</p></li>
                     <li><i class="num">V</i><p class="tabtxt" data-cont="#cate05">Amenity & bedding</p></li>

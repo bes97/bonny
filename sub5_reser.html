@@ -12,83 +12,19 @@
   <script src="js/ui.js" type="text/Javascript" charset="UTF-8"></script>
   <link rel="stylesheet" type="text/css" href="css/sub.css">
   <style>
-    .txtwrap { width: 100%; height: 100%; overflow: auto;  margin-bottom: 5vw; }
-    .leftwrap, .rightwrap { 
-      flex: 0 1 calc((100% - 5vw)/2);
-      position: relative; }
-    .sec1 .img1 { width: calc(100% - 10vw) }
-    .sec1 .img2 { width: 50% }
-    .sec1 .abs { position: absolute; right: 0;bottom: -100px; }
-    .sec1 .titwrap { margin-bottom: 5vw;}
-    .sec1 .span1 { display: inline-block; font-weight: 700;margin-right: 0.4em;word-break: keep-all; flex: 0 0 auto;}
-    .sec1 .span2 { display: inline-block; word-break: keep-all;}
-    .sec1 .imgtxtbox_in { font-size: 1rem; line-height: 2em;margin-bottom: 50px; }
-    .sec1 .imgtxtbox_in.imgtxtbox_in2 { font-size: 0.8em;}
-    .strong { font-size: 1.3em; color: var(--primary); letter-spacing: 2px;}
-    .slash { flex: 0 0 auto}
-    .slash::after { content: "/"; padding: 0 20px; }
-    .slash:last-child::after { display: none;}
-    .sec2 .titwrap { text-align: center; margin-bottom: 5vw; }
-    .sec2 table { min-width: 700px; }
-    .sec3 .titwrap { margin-bottom: 5vw;}
-    .sec3 h4 { margin-bottom: 1em;}
-    .sec3 .txt {line-height: 1.7em;}
-    .sec4 { position: relative; margin-bottom: 10vw; text-align: center;}
-    .sec3 .imgtxtbox_in { margin-bottom: 7vw;}
-    .sec3 .txt {margin-bottom: 3vw;}
-    .sec3 .txt li {display: flex;flex-wrap: nowrap; }
-    .sec3 .txt li::before { content: "-";display: block;margin-right: 10px;flex: 0 0 auto;}
-    .sec3 .txt li p {flex: 1 1 auto}
-    .sec3 .txt .block { display: block; }
-    .sec3 .img1 { width: 80%; margin-left: auto;}
-    .sec3 .img2 { position: relative; top: -100px; width: 60%; }
-    .sec3 .img3 { width: 50%; margin-left: auto;}
-    .sec4 .abs { position: absolute; width: 100%; height: 100%; 
-      top: 0; left: 0; color: #ffffff;font-size: 1.5vw; line-height: 2em;}
-    #sky {
-      background:url('img/sub5_reservation_img6_2.png') center;
-      background-size:120%;
-      position:relative;
-      width:100%;
-      height:70vh;
-      margin:0 auto;	
-    }		
-    
-    .sec5 { word-break: keep-all;}
-    .sec5 .titwrap { text-align: center; margin-bottom: 5vw}
-    .sec5 .txtcont {margin-bottom: 5vw;text-align: center;line-height: 2em; }
-    .sec5 table { margin: 0 auto; font-size: 0.8rem;word-break: keep-all;
-      min-width: 530px;}
-    /* .tb-d2 th:first-child p{ padding-left: 5%;}
-    .tb-d2 th:last-child p{ padding-right: 5%;} */
-    .sec5 .subcont {  margin-bottom: 5vw;text-align: center;line-height: 2em; }
-    .btnwrap { text-align: center;}
-  
-  
-    @media all and (max-width: 800px) {
-      .sec1 .abs { bottom: 50px; }
-    }
-    @media all and (max-width: 560px) {
-      [class ^="flex-"]{ display: block; }
-      .contents {
-        padding-top:50px;
-        padding-bottom: 50px;
-      }
-      .sec1 .leftwrap { margin-bottom: 10vw; }
-      .sec4 .abs {font-size: 0.7rem;line-height: 1.5em;}
-       h3 { font-size: 1.3rem}
-       h4 { font-size: 1rem}
-       .sec3 .titwrap { margin-bottom: 50px; }
-       .sec3 .txtbox { margin-bottom: 50px; }
-       #sky { height: 40vh; background-size:150%;}
-       .sec5 .txtcont, .sec5 .subcont { font-size: 0.9rem; line-height: 1.5em; margin-top: 50px; margin-bottom: 50px;}
-    }
   </style>
+  <script>
+    $(function() {
+      if (window.innerWidth < 560) {
+        $('#sky').css({backgroundPosition:'center'});
+      }
+    })
+  </script>
 </head>
 <body oncontextmenu=return false ondragstart=return false onselectstart=return false>
   <div id="wrap">
     <header id="header"></header>
-    <div id="main">
+    <div id="main" class="sub5_reser">
       <section class="top">
           <div>
             <img src="img/sub5_reservation_top.png">

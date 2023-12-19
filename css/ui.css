@@ -197,6 +197,7 @@
   align-items: flex-end;
   width: 100%;
   font-family: "Calista"; font-weight: 100;
+  cursor: pointer;
 }
 #offer .tabnav li:nth-child(1) { margin-left: 6%;}
 #offer .tabnav li:nth-child(2) { margin-left: 12%;}
@@ -291,8 +292,9 @@
   font-size: 1rem; line-height: 1.7em;
   font-family: "Pretendard"; font-weight: 400;
 }
-#villa .roomimg { position: relative;margin-bottom: 1.5rem; max-width: 650px;}
-#villa .roomimg img { width: 100%; }
+#villa .roomimg { position: relative;margin-bottom: 1.5rem; max-width: 650px;overflow: hidden;}
+#villa .roomimg img { width: 100%; transition: 2s; }
+#villa .roomimg:hover img { transform: scale(1.2); }
 #villa .roomname {
   font-size: 1rem;
   font-family: 'Lato', sans-serif;
@@ -310,6 +312,8 @@
   color: var(--gray);
   text-transform: uppercase;
 }
+
+.paral { transition: background 1s;}
 
 @media all and ( max-width: 560px ) {
   .slidetxt { font-size: 6vw;}

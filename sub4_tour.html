@@ -12,49 +12,6 @@
   <script src="js/ui.js" type="text/Javascript" charset="UTF-8"></script>
   <link rel="stylesheet" type="text/css" href="css/sub.css">
   <style>
-    .sec1 {position: relative;}
-    
-    .list_item { position: relative; width: calc((100% - 20vw) / 2); max-width:590px;margin-bottom: 10vw;font-size: 1.5625rem; text-align: center; overflow: hidden; }
-    .list_item:nth-last-child(1), .list_item:nth-last-child(2){ margin-bottom: 0;}
-
-    .list_item .imgwrap { padding: 0 20px;}
-    .imgbox { position: relative;}
-
-    .list_item .imgtxt { padding-top: 1.5em;padding-bottom: 1.5em  }
-    .list_item .tit { margin-bottom: 0.5em; }
-    .list_item .subtit { font-size: 1rem; }
-
-    .list_item .more { font-size: 0.875rem; padding:0 1em; text-align: right;}
-    .list_item .icon { transform: translateY(6px); transition: 0.5s;}
-    .list_item .icon.active { 
-      transform: translateY(3px) rotate(225deg); transform-origin: center;}
-    .imgtxtbox {
-      position: relative;
-      font-size: 1.1rem;
-      text-align: left;
-      word-break: keep-all;
-      line-height: 1.5em;
-      margin-top: 30px;
-      padding: 0 30px;
-    }
-
-    .moredelay { transition-delay: 0.5s;}
-    .list_item  .moredelay.more::after { 
-      content: '';display: block;
-      width: 0; height:1px; margin-top: 0.5em; 
-      background-color: var(--fontdefault);
-      transition: width 0.5s 0.5s cubic-bezier(.57,.21,.69,1.25);
-     }
-     .list_item .moredelay.more.active::after { width: 100%;}
-     .moredelay2 { transition-delay: 1s;}
-     .moredelay3 { transition-delay: 1.2s;}
-     .list_item .more.moredelay.delay2_moredelay::after { transition-delay: 1s;}
-
-    @media all and (max-width: 560px) {
-      .list_item { width: 100%; margin-bottom: 100px;}
-      .list_item:nth-last-child(1), .list_item:nth-last-child(2) { margin-bottom: 100px; }
-      .imgtxtbox { font-size: 0.9rem;}
-    }
   </style>
   <script>
     $(function() {
@@ -72,7 +29,7 @@
 <body>
   <div id="wrap">
     <header id="header"></header>
-    <div id="main" class="tour">
+    <div id="main" class="sub4_tour">
       <section class="top">
           <div>
             <img src="img/sub4_tour_top.png">

@@ -1,3 +1,5 @@
+@import url(content.css);
+
 body { padding-bottom: 500px; }
 h1 { font-family: "Calista";font-weight: 100;font-size: 9vw;text-transform: uppercase;text-align: center;margin-bottom: 0.8em;}
 h1.h1_5 { font-size: 5vw; }
@@ -10,6 +12,7 @@ h4 { font-weight: 700;  font-size: 1.125rem;}
 .flex-around { display: flex; flex-wrap: wrap; justify-content: space-around;align-items: flex-start; height: auto;}
 .flex-left { display: flex; flex-wrap: nowrap; justify-content: flex-start; }
 .flex-leftwrap { display: flex; flex-wrap: wrap; justify-content: flex-start; }
+.flex-end { display: flex; flex-wrap: nowrap; justify-content: flex-end; }
 .flex-space { display: flex; flex-wrap: nowrap; justify-content: space-between; }
 .flex-spacewrap { display: flex; flex-wrap: wrap; justify-content: space-between; }
 .flex-vcenter { display: flex; 
@@ -23,7 +26,7 @@ h4 { font-weight: 700;  font-size: 1.125rem;}
 .btn_square:hover { border-radius: 30px; border-color:transparent;background-color: #00000060; color: #ffffff;}
 
 .slick-dots { bottom: 7vh;}
-.slidetxt { bottom: 10vh; font-size: 3.5vw; text-align: center;line-height: 1.5em;}
+.slidetxt {  width: 100%;bottom: 10vh; font-size: 3.5vw; text-align: center;line-height: 1.5em;}
 .slidetxt_small { font-size: 1.3rem;line-height: 1em; }
 
 .tb-d1{ 
@@ -41,6 +44,7 @@ h4 { font-weight: 700;  font-size: 1.125rem;}
 .tb-d2 th { background-color: #000000; font-weight: 400;padding: 10px;vertical-align: middle; color: var(--background); }
 .tb-d2 td { padding: 10px;vertical-align: middle; text-align: center; }
 
+
 @media all and (max-width: 800px) { 
   body { padding-bottom: 600px !important; }
 }
@@ -57,8 +61,8 @@ h4 { font-weight: 700;  font-size: 1.125rem;}
     letter-spacing: -2px;
   } 
   .top div{ width: 100%; height: 50vh; }
-  .slidetxt { font-size: 1.5rem !important; }
-  .slidetxt_small {font-size: 1.1rem !important;}
+  .slidetxt { font-size: 1.5rem !important;}
+  .slidetxt_small {font-size: 0.9rem !important;}
 
   .btn_square { font-size: 0.9rem;padding: 1em 2em 0.5em;}
 }

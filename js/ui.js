@@ -5,14 +5,17 @@ $(function() {
     let tabcont = self.find('.tabnav .focus .tabtxt').data('cont');
     let last_tabcont = tabcont;
     $(tabcont).show().css({'z-index':1});
-      self.find('.tabnav > ul > li').on("mouseenter", function(){
+    self.find('.tabnav > ul > li').on("mouseenter", function(){
       tabcont = $(this).find('.tabtxt').data('cont');
+      $(tabcont).css({'z-index':0})
       self.find('.tabnav > ul > li').removeClass('focus');
-      $(last_tabcont).fadeOut(2000).css({'z-index':1});
+      $(last_tabcont).stop().fadeOut(1000);
+      $(tabcont).stop().fadeIn(1000);
       $(this).addClass('focus');
-      $(tabcont).fadeIn(2000).css({'z-index':1});
-      last_tabcont = tabcont;
-      console.log(last_tabcont)
+      setTimeout(() => { 
+        last_tabcont = tabcont;
+        $(last_tabcont).css({'z-index':1})
+      }, 1000)
     })
   })
 
@@ -23,20 +26,6 @@ $(function() {
       $(self.data('target')).toggleClass("active");
     })
   })
-    // $('.accrclose').each(function(){
-    //   let accr = $(this);
-    //   $('.more').on('click',async function() {
-    //     let self = $(this);
-    //     $(accr).find('.icon').removeClass("active");
-    //     $(accr).find('.imgtxtbox').removeClass("active");
-    //     await sleep(500);
-    //     self.find('.icon').addClass("active");
-    //     $(self.data('target')).addClass("active");
-    //   })
-    // })
-    // function sleep(ms) {
-    //   return new Promise(resolve => setTimeout(resolve, ms));
-    // }
    //내용 토글
    const tour_toggle_event = function(){
     const container = $(".info-container"),
@@ -71,64 +60,77 @@ $(function() {
   }
 
   setFlowBanner();
-     const $counters = $(".scrollon");  //translate
-     const exposurePercentage = 20; 
-     const loop = true;
- 
-     $(window).on('scroll', function() {
-         $counters.each(function() {   //translate
-             const $el = $(this);
-             const rect = $el[0].getBoundingClientRect();
-             const winHeight = window.innerHeight; 
-             const contentHeight = rect.bottom - rect.top;
-             if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
-                 $el.addClass('active');
-             }
-             if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
-                 $el.removeClass('active');
-             }
-         });
-     }).scroll();
+  const $counters = $(".scrollon");  //translate
+  const exposurePercentage = 20; 
+  const loop = true;
 
-     $(".lazy").slick({
-      lazyLoad: 'ondemand',
-      slideToShow: 1,
-      slideToScroll: 1,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 7000,
-      fade: true,
-      swiper: false,
-      pauseOnHover : false,
-      draggable: true,
-      touchMove : true, 
-      arrows: false,
-      dots: true,
-    });
-    $(".center").slick({
-      arrows: false,
-      dots: false,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 0,
-      speed: 3000,
-      slidesToShow: 4,
-      slidesToScroll: 3,
-      pauseOnHover : false,
-      easing: 'linear',
-    });
+  let lastScrollY = 0;
+  $(window).on('scroll', function(e) {
+    const scrollY = window.scrollY;
+    const scrollDown = scrollY > lastScrollY;
 
-    //패럴랙스
-    var wd = $(window);
-    $('.paral').each(function(){
-      var bg = $(this);
-      wd.scroll(function(){
-        var yPos = -(wd.scrollTop() / 1.5); 
-        var coords = '50%' + yPos + 'px';
-        bg.css({backgroundPosition:coords});
+    if (scrollDown) {
+      $counters.each(function() {   //translate
+        const $el = $(this);
+        const rect = $el[0].getBoundingClientRect();
+        const winHeight = window.innerHeight; 
+        const contentHeight = rect.bottom - rect.top;
+        if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
+            $el.addClass('active');
+        }
+        // if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
+        //     $el.removeClass('active');
+        // }
       });
-    });
-  })
+    } else {
+      if ( $(document).scrollTop() <= window.innerHeight - 300 ) $counters.removeClass('active');
+    }
+    lastScrollY = scrollY;
+  }) //.scroll();
+
+  $(".lazy").slick({
+    lazyLoad: 'ondemand',
+    slideToShow: 1,
+    slideToScroll: 1,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 7000,
+    fade: true,
+    swiper: false,
+    pauseOnHover : false,
+    draggable: true,
+    touchMove : true, 
+    arrows: false,
+    dots: true,
+  });
+  $(".center").slick({
+    arrows: false,
+    dots: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed: 3000,
+    slidesToShow: 4,
+    slidesToScroll: 3,
+    pauseOnHover : false,
+    easing: 'linear',
+  });
+
+  //패럴랙스
+  if (window.innerWidth > 560) {
+    var wd = $(window);
+    if (document.querySelector('.paral')){
+      $('.paral').each(function(){
+        var bg = $(this);
+        wd.scroll(function(){
+          var yPos = -(wd.scrollTop() / 1.5); 
+          var coords = '50%' + yPos + 'px';
+          bg.css({backgroundPosition:coords});
+        });
+      });
+    }
+  }
+})
 window.addEventListener('DOMContentLoaded', function(){
   if (document.querySelector('.rollerwrap')) {
     let roller = document.querySelector('.roller');
