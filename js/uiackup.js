@@ -1,13 +1,21 @@
 $(function() {
-  let tabcont = $('.tabnav .focus .tabtxt').data('cont');
-  $(tabcont).show();
+
   $('.fntab').each(function(){
-      $('.tabnav li').on("mouseenter", function(){
+    let self = $(this);
+    let tabcont = self.find('.tabnav .focus .tabtxt').data('cont');
+    let last_tabcont = tabcont;
+    $(tabcont).show().css({'z-index':1});
+    self.find('.tabnav > ul > li').on("mouseenter", function(){
       tabcont = $(this).find('.tabtxt').data('cont');
-      $('.tabnav li').removeClass('focus');
-      $('.tabcont .tabitem').fadeOut(300);
+      $(tabcont).css({'z-index':0})
+      self.find('.tabnav > ul > li').removeClass('focus');
+      $(last_tabcont).stop().fadeOut(1000);
+      $(tabcont).stop().fadeIn(1000);
       $(this).addClass('focus');
-      $(tabcont).fadeIn(300);
+      setTimeout(() => { 
+        last_tabcont = tabcont;
+        $(last_tabcont).css({'z-index':1})
+      }, 1000)
     })
   })
 
@@ -18,110 +26,126 @@ $(function() {
       $(self.data('target')).toggleClass("active");
     })
   })
-  $('.accrclose').each(function(){
-    let accr = $(this);
-    $('.more').on('click',async function() {
-      let self = $(this);
-      $(accr).find('.icon').removeClass("active");
-      $(accr).find('.imgtxtbox').removeClass("active");
-      await sleep(500);
-      self.find('.icon').addClass("active");
-      $(self.data('target')).addClass("active");
+   //내용 토글
+   const tour_toggle_event = function(){
+    const container = $(".info-container"),
+    info_wrap = container.find("li"),
+    closetype = container.find(".closetype"),
+    tit = info_wrap.find(".acctitwrap")
+
+    info_wrap.each(function(){
+        if($(this).hasClass("active")){
+            $(this).find(".imgtxtbox").css("height",$(this).find(".imgtxtbox p").innerHeight())
+        }
     })
-  })
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    tit.on("click",function(){   
+        const this_parent_info = $(this).parents(".list_item");
+       
+        if(this_parent_info.hasClass("active")){
+            this_parent_info.removeClass("active")
+            this_parent_info.find(".imgtxtbox").css("height",0)
+            console.log('hasactive::',this_parent_info)
+        }else{
+            if (closetype) {
+              container.find(".imgtxtbox").css("height",0);
+              container.find(".list_item").removeClass("active");
+            }
+            this_parent_info.addClass("active")
+            this_parent_info.find(".imgtxtbox").css("height",this_parent_info.find(".imgtxtbox .imgtxtbox_in").innerHeight())
+        }
+    })
   }
+  if($(".tour-wrap").length > 0){
+      tour_toggle_event()
+  }
+
   setFlowBanner();
-     const $counters = $(".scrollon");  //translate
-     const exposurePercentage = 20; 
-     const loop = true;
- 
-     $(window).on('scroll', function() {
-         $counters.each(function() {   //translate
-             const $el = $(this);
-             const rect = $el[0].getBoundingClientRect();
-             const winHeight = window.innerHeight; 
-             const contentHeight = rect.bottom - rect.top;
-             if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
-                 $el.addClass('active');
-             }
-             if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
-                 $el.removeClass('active');
-             }
-         });
-         if ($('.typewrap').hasClass('active')) {
-          typingfunc('.typingtxt1','.typingani1');
-          typingfunc('.typingtxt2','.typingani2');
-          typingfunc('.typingtxt3','.typingani3');
-          typingfunc('.typingtxt4','.typingani4');
-         } else {
-          $('.typing').text('')
-         }
-        //  $('.typewrap.active').each(function(){
-        //   // typingfunc('.typing-txt','.typing');
+  const $counters = $(".scrollon");  //translate
+  const exposurePercentage = 20; 
+  const loop = true;
 
-        // })
-     }).scroll();
+  let lastScrollY = 0;
+  $(window).on('scroll', function(e) {
+    const scrollY = window.scrollY;
+    const scrollDown = scrollY > lastScrollY;
 
-   
+    if (scrollDown) {
+      $counters.each(function() {   //translate
+        const $el = $(this);
+        const rect = $el[0].getBoundingClientRect();
+        const winHeight = window.innerHeight; 
+        const contentHeight = rect.bottom - rect.top;
+        if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
+            $el.addClass('active');
+        }
+        // if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
+        //     $el.removeClass('active');
+        // }
+      });
+    } else {
+      if ( $(document).scrollTop() <= window.innerHeight - 300 ) $counters.removeClass('active');
+    }
+    lastScrollY = scrollY;
+  }) //.scroll();
 
-    
+  $(".lazy").slick({
+    lazyLoad: 'ondemand',
+    slideToShow: 1,
+    slideToScroll: 1,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 7000,
+    fade: true,
+    swiper: false,
+    pauseOnHover : false,
+    draggable: true,
+    touchMove : true, 
+    arrows: false,
+    dots: true,
+  });
+  $(".center").slick({
+    arrows: false,
+    dots: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed: 3000,
+    slidesToShow: 4,
+    slidesToScroll: 3,
+    pauseOnHover : false,
+    easing: 'linear',
+  });
 
-
-     $(".lazy").slick({
-      lazyLoad: 'ondemand',
-      slideToShow: 1,
-      slideToScroll: 1,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 3000,
-      fade: true,
-      swiper: false,
-      pauseOnHover : false,
-      draggable: false,
-      arrows: false,
-      dots: true,
+  //패럴랙스
+  // if (window.innerWidth > 560) {
+    var wd = $(window);
+    $('.paral').each(function(){
+      var bg = $(this);
+      wd.scroll(function(){
+        var yPos = -(wd.scrollTop() / 1.5); 
+        var coords = '50%' + yPos + 'px';
+        bg.css({backgroundPosition:coords});
+      });
     });
-    $(".center").slick({
-      arrows: false,
-      dots: false,
-      infinite: true,
-      centerMode: true,
-      autoplay: true,
-      autoplaySpeed: 0,
-      slidesToShow: 4,
-      slidesToScroll: 3,
-      pauseOnHover : false,
-    });
+  // }
 })
+window.addEventListener('DOMContentLoaded', function(){
+  if (document.querySelector('.rollerwrap')) {
+    let roller = document.querySelector('.roller');
+    roller.id = 'roller1';
+  
+    let clone = roller.cloneNode(true);
+    clone.id = 'roller2';
+    document.querySelector('.rollerwrap').appendChild(clone);
+  
+    document.querySelector('#roller1').style.left = '0px';
+    document.querySelector('#roller2').style.left = document.querySelector('.roller .rollerul').offsetWidth+'px';
+  
+    roller.classList.add('original');
+    clone.classList.add('clone');
+  }
+});
 
-function typingfunc(typingtxtclass, typingclass) {
-  var typingBool = false; 
-  var typingIdx=0; 
-  // 타이핑될 텍스트를 가져온다 
-  //var typingTxt = $(".typing-txt").text(); 
-  var typingTxt = $(typingtxtclass).text(); 
-  typingTxt=typingTxt.split(""); // 한글자씩 자른다. 
-
-  if(typingBool==false){ 
-    // 타이핑이 진행되지 않았다면 
-    typingBool=true;     
-    var tyInt = setInterval(typing,20); // 반복동작 
-  } 
-  function typing(){ 
-    if(typingIdx<typingTxt.length){ 
-      // 타이핑될 텍스트 길이만큼 반복 
-      //$(".typing").append(typingTxt[typingIdx]);
-      $(typingclass).append(typingTxt[typingIdx]);
-      // 한글자씩 이어준다. 
-      typingIdx++; 
-     } else{ 
-       //끝나면 반복종료 
-      clearInterval(tyInt); 
-     } 
-  }  
-}
 function setFlowBanner() {
   const $wrap = $('.animated-title');
   const $list = $('.animated-title .track');
@@ -154,7 +178,7 @@ function random(min, max) {
   function floatingObject(selector,delay,size){
     gsap.to(selector, random(2,2.5), {
       y: size,
-      repeat: 1,
+      repeat: 2,
       yoyo: true,
       ease: Power1.easeInOut,
       delay: random(0,delay)

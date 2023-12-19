@@ -21,7 +21,7 @@
 }
 .sub1_view .sec2 .imgbox {position: relative; padding-top: 30px;}
 .sub1_view .sec2 .imgbox::after { 
-  content: url(img/sub1_view_tape.png); display: block;
+  content: url(../img/sub1_view_tape.png); display: block;
   position: absolute;
   top: 0; 
  }
@@ -269,7 +269,7 @@ font-weight: 400; }
 .sub5_reser .sec4 .abs { position: absolute; width: 100%; height: 100%; 
   top: 0; left: 0; color: #ffffff;font-size: 1.5vw; line-height: 2em;}
 .sub5_reser #sky {
-  background:url('img/sub5_reservation_img6_2.png') center;
+  background:url('../img/sub5_reservation_img6_2.png') center;
   background-size:120%;
   position:relative;
   width:100%;

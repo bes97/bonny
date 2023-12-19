@@ -84,6 +84,7 @@ $(function() {
       });
     } else {
       if ( $(document).scrollTop() <= window.innerHeight - 300 ) $counters.removeClass('active');
+      else $counters.addClass('active');
     }
     lastScrollY = scrollY;
   }) //.scroll();
@@ -117,18 +118,16 @@ $(function() {
   });
 
   //패럴랙스
-  if (window.innerWidth > 560) {
+   if (window.innerWidth > 560) {
     var wd = $(window);
-    if (document.querySelector('.paral')){
-      $('.paral').each(function(){
-        var bg = $(this);
-        wd.scroll(function(){
-          var yPos = -(wd.scrollTop() / 1.5); 
-          var coords = '50%' + yPos + 'px';
-          bg.css({backgroundPosition:coords});
-        });
+    $('.paral').each(function(){
+      var bg = $(this);
+      wd.scroll(function(){
+        var yPos = -(wd.scrollTop() / 1.5); 
+        var coords = '50%' + yPos + 'px';
+        bg.css({backgroundPosition:coords});
       });
-    }
+    });
   }
 })
 window.addEventListener('DOMContentLoaded', function(){
