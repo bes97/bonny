@@ -320,7 +320,9 @@
 
   #villa { padding-bottom: 50px;}
   .roomwrap {display: block;}
-  .bigtxt {font-size: 2rem;}
+  #villa .bigtxt {font-size: 2rem;}
+  
+  .room { margin-bottom: 30px;}
 
   #offer {margin-bottom: 0px;}
   #offer .in {

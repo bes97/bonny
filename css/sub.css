@@ -125,7 +125,7 @@ font-weight: 400; }
 .sub2_room .sec2 .typingtxt1-2 { left: 30%; }
 .sub2_room .typing-ani.active::after { animation-duration: 6s;}
 .sub2_room .typingtxt1-2.typing-ani.active::after { animation-delay: 2s; }
-.sub2_room #villa .bigtxt { font-size: 4.7vw; }
+.sub2_room .bigtxt { font-size: 4.7vw; }
 
 @media all and (max-width: 560px) {
 .sub2_room .sec1 .grid { display: block; height: auto; }
@@ -191,7 +191,7 @@ font-weight: 400; }
 .sub4_tour .sec1 {position: relative;}
     
 .sub4_tour .list_item { position: relative; width: calc((100% - 20vw) / 2); max-width:590px;margin-bottom: 10vw;font-size: 1.5625rem; text-align: center; overflow: hidden; }
-.sub4_tour .list_item:nth-last-child(1), .list_item:nth-last-child(2){ margin-bottom: 0;}
+.sub4_tour .list_item:nth-last-child(1), .sub4_tour .list_item:nth-last-child(2){ margin-bottom: 0;}
 
 .sub4_tour .list_item .imgwrap { padding: 0 20px;}
 .sub4_tour .imgbox { position: relative;}
@@ -228,7 +228,7 @@ font-weight: 400; }
 
 @media all and (max-width: 560px) {
   .sub4_tour .list_item { width: 100%; margin-bottom: 100px;}
-  .sub4_tour .list_item:nth-last-child(1), .list_item:nth-last-child(2) { margin-bottom: 100px; }
+  .sub4_tour .list_item:nth-last-child(1), .sub4_tour .list_item:nth-last-child(2) { margin-bottom: 100px; }
   .sub4_tour .imgtxtbox { font-size: 0.9rem;}
 }
 
@@ -305,5 +305,5 @@ font-weight: 400; }
   .sub5_reser  .sec3 .titwrap { margin-bottom: 50px; }
   .sub5_reser  .sec3 .txtbox { margin-bottom: 50px; }
   .sub5_reser  #sky { height: 40vh; background-size:150%;}
-  .sub5_reser  .sec5 .txtcont, .sec5 .subcont { font-size: 0.9rem; line-height: 1.5em; margin-top: 50px; margin-bottom: 50px;}
+  .sub5_reser  .sec5 .txtcont, .sub5_reser .sec5 .subcont { font-size: 0.9rem; line-height: 1.5em; margin-top: 50px; margin-bottom: 50px;}
 }
