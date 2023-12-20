@@ -52,14 +52,14 @@
 }
 .sitemapwrap {position: fixed;top: 0;right: 0;}
 .sitemapwrap .sitemapwrapin { 
-  width: 100vw;height: 100vh;
+  width: auto;height: 100vh;
   display: flex; flex-wrap: nowrap; justify-content: flex-end;
 }
 .sitemap {
   position:relative; width:100vw;max-width:1200px;height: 100%; z-index: 1;
   display: flex;flex-wrap: nowrap;justify-content: flex-start;
   background-color: var(--background);
-  height: 100vh;overflow-y: auto; 
+  height: 100vh;overflow-y: auto; overflow-x: hidden;
 }
 .sitemap.imgbox img {width:  100%; height:100%;object-fit: cover;}
 .sitemap .nav_left { flex:0 0 50%; height: 100%;z-index: 2; min-height: 650px;}
@@ -83,7 +83,7 @@
 
 .sitemap .logo { width: 100%;height: 65px; justify-content: center;   color: #000000;font-weight: 700; margin: 0 auto;}
 .sitemap .logo::before { background-image: url('img/logo_b.png'); }
-.sitemap .nav .depth2 { display: flex;flex-wrap: wrap;justify-content: flex-start;}
+
 .sitemap .depth1 { display: flex;flex-wrap:wrap; align-content: space-between;width: 350px;max-height:550px;min-height: 450px; margin: 0 auto;}
 .sitemap .depth1 > li { width: 100%; margin-bottom: 30px;}
 .sitemap .depth1 > li > a {
@@ -91,6 +91,10 @@
   font-size: 2.5vw; line-height: 1em;
 }
 .sitemap .depth1 > li.focus > a { color: var(--primary); }
+.sitemap .nav .depth2 { 
+  display: flex;flex-wrap: wrap;justify-content: flex-start;margin-bottom: 5px;
+  color: #aaaaaa; font-family: 'Lato', sans-serif;
+}
 .sitemap .depth2 > li { font-size: 1rem; margin-right: 1em; }
 .sitemap .sns { 
   display: flex; flex-wrap: wrap; justify-content: center;align-content: center;
@@ -101,7 +105,7 @@
 .sitemap .sns p { margin: 0 10px;}
 .sitemap .sns i { font-size: 1.5rem; color: var(--fontdefault); }
 .sitemap .close { 
-  position: absolute; right: 10vw;top: 7vw; width: 30px; height: 30px;
+  position: absolute; right: 5vw;top: 5vw; width: 30px; height: 30px;
   font-size: 0.9rem;
   opacity: 1;
   transition: opacity 1s;
@@ -130,14 +134,16 @@
   #header .wpc { padding: 0;}
 
   .sitemap .nav_left { display: none;;}
-  .sitemap .logo { justify-content: center; height: 60px;margin-top: 20px;margin-bottom: 30px;}
-  .sitemap .nav { min-width: 100%; justify-content: flex-start;align-content: flex-start; min-height: auto;}
+  .sitemap .logo { justify-content: center; height: 60px;}
+  .sitemap .nav { min-width: 100%;}
   .sitemap .nav .depth1 { text-align: center;padding: 0;align-content: center;}
   .sitemap .nav .depth1 > li { margin-bottom: 20px;line-height: 1.5em;;}
   .sitemap .nav .depth1 > li > a { font-size: 2rem;}
   .sitemap .nav .depth2 { justify-content: center; }
-  
+  .sitemap .close { top: 30px; right: 20px; }
 }
+.sitemapwrap { right: -100%; transition: 2s;}
+.sitemapwrap.active { right: 0; }
 </style>
 <script>
   $(function(){
@@ -149,19 +155,15 @@
       }
     })
     $('.nav_btn').click(function() {
-      $('.sitemapwrap').fadeIn(100).addClass('active');
-      $('.modalback').fadeIn(1000);
+      $('.sitemapwrap').stop().fadeIn(100).addClass('active');
+      $('.modalback').fadeIn(300);
       // $('body').css({overflow:'hidden'});
       $('.sitemapwrap .close').addClass("active");
     })
     $('.sitemapwrap .close, .sitemapwrap, .modalback').click(function() {
       $('.sitemapwrap').removeClass('active');
       $('.sitemapwrap .close').removeClass("active")   
-      $('.modalback').fadeOut(1000);
-      setTimeout(() => {
-        $('.sitemapwrap').hide();
-        // $('body').css({overflow:'auto'});
-        }, 2000);
+      $('.modalback').fadeOut(300);
     })
 
     $('.headerfntab').each(function(){
@@ -213,54 +215,54 @@
             <a href="sub1_view.html" class="tabtxt" data-cont="#PROLOGUE">PROLOGUE</a>
           </li>
           <li>
-            <a href="sub2_roomA.html"  class="tabtxt" data-cont="#ROOMS">ROOMS</a>
+            <a href="sub2_room1.html"  class="tabtxt" data-cont="#ROOMS">ROOMS</a>
             <ul class="depth2">
-              <li><a href="sub2_roomA.html">A</a></li>
-              <li><a href="sub2_roomB.html">B</a></li>
-              <li><a href="sub2_roomC.html">C</a></li>
-              <li><a href="sub2_roomD.html">D</a></li>
+              <li><a href="sub2_room1.html">A</a></li>
+              <li><a href="sub2_room2.html">B</a></li>
+              <li><a href="sub2_room3.html">C</a></li>
+              <li><a href="sub2_room4.html">D</a></li>
             </ul>
           </li>
           <li>
             <a href="sub3_special1.html"  class="tabtxt" data-cont="#SPECIAL">SPECIAL</a>
             <ul class="depth2">
               <li><a href="sub3_special1.html">OCEAN VIEW</a></li>
-              <li class="wauto"><a href="#">INDOOR WARMPOOL</a></li>
+              <li class="wauto"><a href="sub3_special2.html">INDOOR WARMPOOL</a></li>
             </ul>
             <ul class="depth2">
-              <li><a href="#">BBQ</a></li>
-              <li><a href="#">NEAR THE SEA</a></li>
-              <li><a href="#">AMENETY&BEDDING</a></li>
+              <li><a href="sub3_special3.html">BBQ</a></li>
+              <li><a href="sub3_special4.html">NEAR THE SEA</a></li>
+              <li><a href="sub3_special5.html">AMENETY&BEDDING</a></li>
             </ul>
           </li>
           <li>
             <a href="sub4_tour.html" class="tabtxt" data-cont="#TOUR">TOUR</a>
           </li>
           <li>
-            <a href="#" class="tabtxt" data-cont="#LOCATION">LOCATION</a>
+            <a href="sub5_map.html" class="tabtxt" data-cont="#LOCATION">LOCATION</a>
           </li>
           <li>
-            <a href="sub5_reser.html" class="tabtxt" data-cont="#RESERVATION">RESERVATION</a>
+            <a href="sub6_reser.html" class="tabtxt" data-cont="#RESERVATION">RESERVATION</a>
             <ul class="depth2">
-              <li><a href="sub5_reser.html">예약안내</a></li>
-              <li><a href="#">실시간예약</a></li>
-              <li><a href="#">공지사항</a></li>
+              <li><a href="sub6_reser.html">예약안내</a></li>
+              <li><a href="http://www.ddnayo.com/RsvSys/?id_hotel=100593" target="_blank" class="reser_btn">실시간예약</a></li>
+              <li><a href="sub6_notice.html">공지사항</a></li>
             </ul>
           </li>
         </ul>
         <div class="sns">
-          <p class=""><a href="#">BOOKING<i class="far fa-clock"></i></a></p>
-          <p class=""><a href="#">INSTAGRAM<i class="fab fa-instagram"></i></a></p>
-          <p class=""><a href="#">BLOG<i class="fab fa-blogger-b"></i></a></p>
+          <p class=""><a href="http://www.ddnayo.com/RsvSys/?id_hotel=100593" target="_blank">BOOKING<i class="far fa-clock"></i></a></p>
+          <p class=""><a href="https://www.instagram.com/explore/tags/풀빌라바니" target="_blank">INSTAGRAM<i class="fab fa-instagram"></i></a></p>
+          <p class=""><a href="https://search.naver.com/search.naver?where=post&sm=tab_pge&query=풀빌라바니" target="_blank">BLOG<i class="fab fa-blogger-b"></i></a></p>
         </div>
       </nav>
       <div class="nav_left">
-        <div id="PROLOGUE"><img src="img/sub2_room2_slide1.png" alt=""></div>
-        <div id="ROOMS"><img src="img/main_slide1.png" alt=""></div>
-        <div id="SPECIAL"><img src="img/main_slide2.png" alt=""></div>
-        <div id="TOUR"><img src="img/main_slide3.png" alt=""></div>
-        <div id="LOCATION"><img src="img/main_slide5.png" alt=""></div>
-        <div id="RESERVATION"><img src="img/main_slide4.png" alt=""></div>
+        <div id="PROLOGUE"><img src="img/main_slide1.jpg" alt=""></div>
+        <div id="ROOMS"><img src="img/main_slide2.jpg" alt=""></div>
+        <div id="SPECIAL"><img src="img/main_slide3.jpg" alt=""></div>
+        <div id="TOUR"><img src="img/main_slide4.jpg" alt=""></div>
+        <div id="LOCATION"><img src="img/main_slide6.jpg" alt=""></div>
+        <div id="RESERVATION"><img src="img/main_slide5.jpg" alt=""></div>
       </div>
     </div>
   </div>

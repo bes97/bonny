@@ -119,13 +119,13 @@ font-weight: 400; }
 .sub2_room .sec2 .reserv_cont div:nth-child(3) { position: relative;left: -5vw;top: 20vw;z-index:3}
 .sub2_room .sec2 .reserv_cont div:nth-child(4) { position: relative;left: 0px;top: 40vw;z-index:4}
 .sub2_room .sec2 .in { position: relative; }
-.sub2_room .sec2 .typewrap { position: absolute; top: 20%}
+.sub2_room .sec2 .typewrap { position: absolute; top: 20%;}
 .sub2_room .sec2 .typingtxt1 { overflow: hidden;}
-.sub2_room .sec2 .typingtxt1 p { width: 200%; position: relative; font-size: 2vw; color: #cccccc90;line-height: 1.5em; }
+.sub2_room .sec2 .typingtxt1 p { width: 200%; position: relative; font-size: 1.5vw; color: #cccccc90;line-height: 1.5em; }
 .sub2_room .sec2 .typingtxt1-2 { left: 30%; }
 .sub2_room .typing-ani.active::after { animation-duration: 6s;}
 .sub2_room .typingtxt1-2.typing-ani.active::after { animation-delay: 2s; }
-.sub2_room .bigtxt { font-size: 4.7vw; }
+.sub2_room .bigtxt { font-size: 1.3em; }
 
 @media all and (max-width: 560px) {
 .sub2_room .sec1 .grid { display: block; height: auto; }

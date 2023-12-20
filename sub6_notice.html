@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RESERVATION - 풀빌라 바니</title>
+  <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
+  <script src="js/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/common.js" type="text/Javascript" charset="UTF-8"></script>
+  <script src="js/ui.js" type="text/Javascript" charset="UTF-8"></script>
+  <link rel="stylesheet" type="text/css" href="css/sub.css">
+  <script>
+  </script>
+</head>
+<body oncontextmenu=return false ondragstart=return false onselectstart=return false>
+  <div id="wrap">
+    <header id="header"></header>
+    <div id="main" class="sub5_reser">
+      <section class="top">
+          <div>
+            <img src="img/sub6_notice_top.jpg">
+          </div>
+      </section>
+      <section class="sec1 contents">
+        <div class="wpc">
+          <h1 class="scrollon scrollup2">NOTICE</h1>
+
+          <figure class="info-section">
+                         <!-- 게시판 -->
+                    <iframe id="ifrm" name="ifrm" width="100%" height="600" src="../board/bbs/board.php?bo_table=notice" aline="center" scrolling="no" frameborder="no" allowTransparency="true"></iframe>
+
+                    <script type="text/javascript">
+                        
+                        //alert(navigator.userAgent);
+
+                        // 크롬 브라우저의 경우
+                        if (navigator.userAgent.indexOf('Chrome') > 1 || navigator.userAgent.indexOf('MSIE 10.0') > 1 || navigator.userAgent.indexOf('Gecko') > 1) {
+
+
+                            function resize_frame(id) {
+
+                                var frm = document.getElementById("ifrm");
+
+                                function resize() {
+                                    frm.style.height = "auto"; // set default height for Opera
+                                    contentHeight = frm.contentWindow.document.documentElement.scrollHeight;
+                                    frm.style.height = contentHeight + 53 + "px"; // 23px for IE7
+                                }
+
+                                if (frm.addEventListener) {
+                                    frm.addEventListener('load', resize, false);
+                                } else {
+                                    frm.attachEvent('onload', resize);
+                                }
+                            }
+
+                            resize_frame('ifrm');
+
+
+                        } else {
+
+
+                            // 익스 9 이하, Firefox 의 경우											
+                            function resizeHeight(FrameName) {
+                                if (document.all) {
+                                    var body_height = frames[FrameName].document.body.scrollHeight;
+                                } else {
+                                    var body_height = document.getElementById(FrameName).contentWindow.document.body.offsetHeight;
+                                }
+
+                                // 자료가 없을경우 레이어를 보이지 않도록 하기 위해
+                                if (body_height != 0) { // 자료가 없는 경우 높이를 지정해주세요
+                                    document.getElementById(FrameName).height = body_height + "px";
+                                } else {
+                                    document.getElementById(FrameName).height = 30 + "px";
+                                }
+                            }
+
+
+                        }
+                        //
+
+                        
+                    </script>
+                    <!-- 게시판 -->
+                    </figure>          
+        </div>
+      </section>
+    </div>
+    <footer id="footer" class="scrollon"></footer>
+  </div>

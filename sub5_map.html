@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LOCATION - 풀빌라 바니</title>
+  <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
+  <script src="js/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/common.js" type="text/Javascript" charset="UTF-8"></script>
+  <script src="js/ui.js" type="text/Javascript" charset="UTF-8"></script>
+  <link rel="stylesheet" type="text/css" href="css/sub.css">
+  <style>
+  </style>
+  <script>
+    $(function() {
+      $('.list').each(function(){
+        let list = $(this);
+        if($(window).width() > 560) {
+          if ($('.list_item').length % 2 == 1) {
+            list.append('<div class="list_item"></div>')
+          };
+        }
+      })
+    })
+  </script>
+</head>
+<body>
+  <div id="wrap">
+    <header id="header"></header>
+    <div id="main" class="sub5_map">
+      <section class="top">
+          <div>
+            <img src="img/sub5_map_top.jpg">
+          </div>
+      </section>      
+      <section class="sec1 contents">
+        <div class="wpc">
+          <h1 class="scrollon scrollup2">MAP</h1>
+
+          <section class="table-wrap reserve-top">
+            <h1 class="table-tit"># 약도보기</h1>
+            <article class="pc-map">
+                <!-- * 카카오맵 - 지도퍼가기 -->
+                <!-- 1. 지도 노드 -->
+                <div id="daumRoughmapContainer1698282679871" class="root_daum_roughmap root_daum_roughmap_landing"></div>		
+            </article>
+
+            <article class="m-map">
+                <div style="font:normal normal 400 12px/normal dotum, sans-serif; width:300px; height:332px; color:#333; position:relative"><div style="height: 300px;"><a href="https://map.kakao.com/?urlX=311961.0&amp;urlY=891521.0&amp;name=%EC%B6%A9%EB%82%A8%20%ED%83%9C%EC%95%88%EA%B5%B0%20%EA%B7%BC%ED%9D%A5%EB%A9%B4%20%EA%B0%88%EC%9D%8C%EC%9D%B4%EA%B8%B8%20242&amp;map_type=TYPE_MAP&amp;from=roughmap" target="_blank"><img class="map" src="http://t1.daumcdn.net/roughmap/imgmap/c8cd4658596cbe60dd281b6239837b86953e3daef7b607d9a0b9eefbcacb4bff" width="298px" height="298px" style="border:1px solid #ccc;"></a></div><div style="overflow: hidden; padding: 7px 11px; border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 0px 0px 2px 2px; background-color: rgb(249, 249, 249);"><a href="https://map.kakao.com" target="_blank" style="float: left;"><img src="//t1.daumcdn.net/localimg/localimages/07/2018/pc/common/logo_kakaomap.png" width="72" height="16" alt="카카오맵" style="display:block;width:72px;height:16px"></a><div style="float: right; position: relative; top: 1px; font-size: 11px;"><a target="_blank" href="https://map.kakao.com/?from=roughmap&amp;eName=%EC%B6%A9%EB%82%A8%20%ED%83%9C%EC%95%88%EA%B5%B0%20%EA%B7%BC%ED%9D%A5%EB%A9%B4%20%EA%B0%88%EC%9D%8C%EC%9D%B4%EA%B8%B8%20242&amp;eX=311961.0&amp;eY=891521.0" style="float:left;height:15px;padding-top:1px;line-height:15px;color:#000;text-decoration: none;">길찾기</a></div></div></div>
+            </article>
+
+        </section>
+        <section class="map-info">
+
+            <h3>네비게이션 이용시</h3>
+            <p>
+                도로명 주소 : 충청남도 태안군 근흥면 갈음이길 242
+            </p>
+
+        </section>
+
+        </div>
+      </section>
+    </div>
+    <footer id="footer" class="scrollon"></footer>
+  </div>

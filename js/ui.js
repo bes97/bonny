@@ -4,18 +4,14 @@ $(function() {
     let self = $(this);
     let tabcont = self.find('.tabnav .focus .tabtxt').data('cont');
     let last_tabcont = tabcont;
-    $(tabcont).show().css({'z-index':1});
+    $(tabcont).addClass("focus")
     self.find('.tabnav > ul > li').on("mouseenter", function(){
       tabcont = $(this).find('.tabtxt').data('cont');
-      $(tabcont).css({'z-index':0})
       self.find('.tabnav > ul > li').removeClass('focus');
-      $(last_tabcont).stop().fadeOut(1000);
-      $(tabcont).stop().fadeIn(1000);
+      $(last_tabcont).removeClass('focus');
       $(this).addClass('focus');
-      setTimeout(() => { 
-        last_tabcont = tabcont;
-        $(last_tabcont).css({'z-index':1})
-      }, 1000)
+      $(tabcont).addClass('focus');
+      last_tabcont = tabcont;
     })
   })
 
@@ -83,7 +79,7 @@ $(function() {
         // }
       });
     } else {
-      if ( $(document).scrollTop() <= window.innerHeight - 300 ) $counters.removeClass('active');
+      if ( $(document).scrollTop() == 0 ) $counters.removeClass('active');
       else $counters.addClass('active');
     }
     lastScrollY = scrollY;
@@ -95,7 +91,7 @@ $(function() {
     slideToScroll: 1,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 7000,
+    autoplaySpeed: 4000,
     fade: true,
     swiper: false,
     pauseOnHover : false,
@@ -123,7 +119,7 @@ $(function() {
     $('.paral').each(function(){
       var bg = $(this);
       wd.scroll(function(){
-        var yPos = -(wd.scrollTop() / 1.5); 
+        var yPos = -(wd.scrollTop() /7); 
         var coords = '50%' + yPos + 'px';
         bg.css({backgroundPosition:coords});
       });
