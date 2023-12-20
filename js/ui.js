@@ -1,4 +1,12 @@
 $(function() {
+  //모바일창크기 계산
+  function setScreenSize() {
+    let vh = window.innerHeight;
+    // document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+  setScreenSize();
+  window.addEventListener('resize', setScreenSize);
+
   $('.fntab').each(function(){
     let self = $(this);
     let tabcont = self.find('.tabnav .focus .tabtxt').data('cont');

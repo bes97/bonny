@@ -52,7 +52,7 @@
 }
 .sitemapwrap {position: fixed;top: 0;right: 0;}
 .sitemapwrap .sitemapwrapin { 
-  width: auto;height:calc(var(--vh, 1vh) * 100);
+  width: auto;height: --vh;
   display: flex; flex-wrap: nowrap; justify-content: flex-end;
 }
 .sitemap {
@@ -150,12 +150,13 @@
 <script>
   $(function(){
     //모바일창크기 계산
-    function setScreenSize() {
-      let vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-    setScreenSize();
-    window.addEventListener('resize', setScreenSize);
+    // function setScreenSize() {
+    //   // let vh = window.innerHeight * 0.01;
+    //   let vh = screen.height;
+    //   document.documentElement.style.setProperty('--vh', `${vh}px`);
+    // }
+    // setScreenSize();
+    // window.addEventListener('resize', setScreenSize);
 
 
     $(window).on('scroll', function() {
