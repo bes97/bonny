@@ -72,14 +72,17 @@ $(function() {
         const winHeight = window.innerHeight; 
         const contentHeight = rect.bottom - rect.top;
         if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
-            $el.addClass('active');
+          $el.addClass('active');
         }
         // if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
         //     $el.removeClass('active');
         // }
       });
     } else {
-      if ( $(document).scrollTop() == 0 ) $counters.removeClass('active');
+      if ( $(document).scrollTop() == 0 ) { 
+        $counters.removeClass('active');
+        $('section:nth-child(2) .scrollon').addClass('active');
+      }
       else $counters.addClass('active');
     }
     lastScrollY = scrollY;
@@ -113,8 +116,9 @@ $(function() {
     easing: 'linear',
   });
 
-  //패럴랙스
+
    if (window.innerWidth > 560) {
+    //패럴랙스
     var wd = $(window);
     $('.paral').each(function(){
       var bg = $(this);
@@ -124,6 +128,8 @@ $(function() {
         bg.css({backgroundPosition:coords});
       });
     });
+  } else {
+    if ( $(document).scrollTop() == 0 ) $('section:nth-child(2) .scrollon').addClass('active');
   }
 })
 window.addEventListener('DOMContentLoaded', function(){
