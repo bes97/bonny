@@ -52,7 +52,7 @@
 }
 .sitemapwrap {position: fixed;top: 0;right: 0;}
 .sitemapwrap .sitemapwrapin { 
-  width: auto;height: 100vh;
+  width: auto;height:calc(var(--vh, 1vh) * 100);
   display: flex; flex-wrap: nowrap; justify-content: flex-end;
 }
 .sitemap {
@@ -63,11 +63,13 @@
 }
 .sitemap.imgbox img {width:  100%; height:100%;object-fit: cover;}
 .sitemap .nav_left { flex:0 0 50%; height: 100%;z-index: 2; min-height: 650px;}
-.sitemap .nav_left > div { 
-  display: none; width: 100%; height: 100%;
-  position: absolute; z-index: 0;}
-/* .sitemap .nav_left > div:first-child { display: block; } */
-
+.sitemap .nav_left .imgwrap { 
+  display: block; width: 100%; height: 100%;
+  position: absolute; 
+  opacity: 0;
+  transition: opacity 0.5s;}
+  .sitemap .nav_left .imgwrap.focus,
+  .sitemap .nav_left .imgwrap:first-child { opacity: 1; }
 .sitemap .nav { flex:1 1 50%;min-width: 400px;min-height: 650px;
   display: flex; flex-wrap: wrap;justify-content: center;align-content: space-around;
   background-color: var(--background);z-index: 1;}
@@ -132,8 +134,8 @@
   #header.active { padding: 10px 0;}
   #header .logo, #header #nav_btn {transform: scale(0.8);}
   #header .wpc { padding: 0;}
-
-  .sitemap .nav_left { display: none;;}
+  .sitemapwrap {height: 100vh}
+  .sitemap .nav_left { display: none;}
   .sitemap .logo { justify-content: center; height: 60px;}
   .sitemap .nav { min-width: 100%;}
   .sitemap .nav .depth1 { text-align: center;padding: 0;align-content: center;}
@@ -147,6 +149,15 @@
 </style>
 <script>
   $(function(){
+    //모바일창크기 계산
+    function setScreenSize() {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    setScreenSize();
+    window.addEventListener('resize', setScreenSize);
+
+
     $(window).on('scroll', function() {
       if ($(document).scrollTop() >= window.innerHeight) {
         $("#header").addClass("active");
@@ -168,23 +179,36 @@
 
     $('.headerfntab').each(function(){
       let self = $(this);
-      // let tabcont = self.find('.tabnav .focus .tabtxt').data('cont');
-      let tabcont = self.find('.tabnav .depth1 li:first-child .tabtxt').data('cont');
+      let tabcont = $('.nav_left .imgwrap:first-child');
       let last_tabcont = tabcont;
-      $(last_tabcont).show().css({'z-index':1});
-      
+      // $(tabcont).addClass("focus")
       self.find('.tabnav > ul > li').on("mouseenter", function(){
-      tabcont = $(this).find('.tabtxt').data('cont');
-      $(tabcont).css({'z-index':0})
-      self.find('.tabnav > ul > li').removeClass('focus');
-      $(last_tabcont).stop().fadeOut(2000);
-      $(tabcont).stop().fadeIn(2000);
-      $(this).addClass('focus');
-      setTimeout(() => { 
+        tabcont = $(this).find('.tabtxt').data('cont');
+        self.find('.tabnav > ul > li').removeClass('focus');
+        $(last_tabcont).removeClass('focus');
+        $(this).addClass('focus');
+        $(tabcont).addClass('focus');
         last_tabcont = tabcont;
-        $(last_tabcont).css({'z-index':1})
-      }, 2000)
       })
+
+      // let self = $(this);
+      // // let tabcont = self.find('.tabnav .focus .tabtxt').data('cont');
+      // let tabcont = self.find('.tabnav .depth1 li:first-child .tabtxt').data('cont');
+      // let last_tabcont = tabcont;
+      // $(last_tabcont).show().css({'z-index':1});
+      
+      // self.find('.tabnav > ul > li').on("mouseenter", function(){
+      // tabcont = $(this).find('.tabtxt').data('cont');
+      // $(tabcont).css({'z-index':0})
+      // self.find('.tabnav > ul > li').removeClass('focus');
+      // $(last_tabcont).stop().fadeOut(2000);
+      // $(tabcont).stop().fadeIn(2000);
+      // $(this).addClass('focus');
+      // setTimeout(() => { 
+      //   last_tabcont = tabcont;
+      //   $(last_tabcont).css({'z-index':1})
+      // }, 2000)
+      // })
     })
   })
 </script>
@@ -257,12 +281,12 @@
         </div>
       </nav>
       <div class="nav_left">
-        <div id="PROLOGUE"><img src="img/main_slide1.jpg" alt=""></div>
-        <div id="ROOMS"><img src="img/main_slide2.jpg" alt=""></div>
-        <div id="SPECIAL"><img src="img/main_slide3.jpg" alt=""></div>
-        <div id="TOUR"><img src="img/main_slide4.jpg" alt=""></div>
-        <div id="LOCATION"><img src="img/main_slide6.jpg" alt=""></div>
-        <div id="RESERVATION"><img src="img/main_slide5.jpg" alt=""></div>
+        <div id="PROLOGUE" class="imgwrap"><img src="img/main_slide1.jpg" alt=""></div>
+        <div id="ROOMS" class="imgwrap"><img src="img/main_slide2.jpg" alt=""></div>
+        <div id="SPECIAL" class="imgwrap"><img src="img/main_slide3.jpg" alt=""></div>
+        <div id="TOUR" class="imgwrap"><img src="img/main_slide4.jpg" alt=""></div>
+        <div id="LOCATION" class="imgwrap"><img src="img/main_slide6.jpg" alt=""></div>
+        <div id="RESERVATION" class="imgwrap"><img src="img/main_slide5.jpg" alt=""></div>
       </div>
     </div>
   </div>

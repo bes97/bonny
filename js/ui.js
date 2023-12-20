@@ -1,5 +1,4 @@
 $(function() {
-
   $('.fntab').each(function(){
     let self = $(this);
     let tabcont = self.find('.tabnav .focus .tabtxt').data('cont');
