@@ -1,5 +1,5 @@
 <style>
-  #header {
+#header {
   position: fixed;
   top: 50px;
   width: 100%;
@@ -52,7 +52,7 @@
 }
 .sitemapwrap {position: fixed;top: 0;right: 0;}
 .sitemapwrap .sitemapwrapin { 
-  width: auto;height: --vh;
+  width: auto;height: 100%;
   display: flex; flex-wrap: nowrap; justify-content: flex-end;
 }
 .sitemap {
@@ -87,7 +87,7 @@
 .sitemap .logo::before { background-image: url('img/logo_b.png'); }
 
 .sitemap .depth1 { display: flex;flex-wrap:wrap; align-content: space-between;width: 350px;max-height:550px;min-height: 450px; margin: 0 auto;}
-.sitemap .depth1 > li { width: 100%; margin-bottom: 30px;}
+.sitemap .depth1 > li { width: 100%; margin-bottom: 20px;}
 .sitemap .depth1 > li > a {
   font-family: "Calista"; font-weight: 400;
   font-size: 2.5vw; line-height: 1em;
@@ -100,7 +100,7 @@
 .sitemap .depth2 > li { font-size: 1rem; margin-right: 1em; }
 .sitemap .sns { 
   display: flex; flex-wrap: wrap; justify-content: center;align-content: center;
-  width: 100%;padding-bottom: 30px;
+  width: 100%;
   font-size: 1px; color: var(--background);
   /* position: absolute; bottom: 50px; */
  }
@@ -139,10 +139,11 @@
   .sitemap .logo { justify-content: center; height: 60px;}
   .sitemap .nav { min-width: 100%;}
   .sitemap .nav .depth1 { text-align: center;padding: 0;align-content: center;}
-  .sitemap .nav .depth1 > li { margin-bottom: 20px;line-height: 1.5em;;}
-  .sitemap .nav .depth1 > li > a { font-size: 2rem;}
+  .sitemap .nav .depth1 { margin-bottom: 20px;}
+  .sitemap .nav .depth1 > li > a { font-size: 2rem;line-height: 1.5em;}
   .sitemap .nav .depth2 { justify-content: center; }
   .sitemap .close { top: 30px; right: 20px; }
+  .sitemap .sns { margin-bottom: 30px; }
 }
 .sitemapwrap { right: -100%; transition: 2s;}
 .sitemapwrap.active { right: 0; }
