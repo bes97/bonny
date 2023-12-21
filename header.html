@@ -1,19 +1,20 @@
 <style>
 #header {
   position: fixed;
-  top: 50px;
+  top: 80px;
   width: 100%;
-  padding: 30px 0;
   z-index: 99999;
 }
-#header.active { top: 0px; }
+#header.active { top: 50px; }
 #header .in{ 
   position: relative;
-  display: flex; justify-content: space-between;
-  flex-wrap: wrap; align-items: flex-end;
+  /* display: flex; justify-content: space-between;
+  flex-wrap: wrap; align-items: flex-end; */
 }
 .logo { 
-  position: relative;
+  position: absolute;
+  left:30px;
+  top:0;
   text-transform: uppercase;
   font-family: 'Lato', sans-serif;
   font-size: 0.875rem;
@@ -38,6 +39,7 @@
   width: 100%;
   height: 100%;
 }
+#nav_btn { position: absolute;right: 30px;height: 60px;display: flex;align-items: flex-end; }
 .nav_btn { 
   display: flex;
   flex-wrap: wrap;
@@ -83,7 +85,7 @@
 .sitemapwrap.active .nav_left { transform: translateX(0);  }
 .sitemapwrap.active .nav { transform: translateX(0);}
 
-.sitemap .logo { width: 100%;height: 65px; justify-content: center;   color: #000000;font-weight: 700; margin: 0 auto;}
+.sitemap .logo { position:static;width: 100%;height: 65px; justify-content: center;   color: #000000;font-weight: 700; margin: 0 auto;}
 .sitemap .logo::before { background-image: url('img/logo_b.png'); }
 
 .sitemap .depth1 { display: flex;flex-wrap:wrap; align-content: space-between;width: 350px;max-height:550px;min-height: 450px; margin: 0 auto;}
@@ -258,7 +260,7 @@
             <ul class="depth2">
               <li><a href="sub3_special3.html">BBQ</a></li>
               <li><a href="sub3_special4.html">NEAR THE SEA</a></li>
-              <li><a href="sub3_special5.html">AMENETY&BEDDING</a></li>
+              <li><a href="sub3_special5.html">AMENITY&BEDDING</a></li>
             </ul>
           </li>
           <li>
@@ -283,12 +285,12 @@
         </div>
       </nav>
       <div class="nav_left">
-        <div id="PROLOGUE" class="imgwrap"><img src="img/main_slide1.jpg" alt=""></div>
-        <div id="ROOMS" class="imgwrap"><img src="img/main_slide2.jpg" alt=""></div>
-        <div id="SPECIAL" class="imgwrap"><img src="img/main_slide3.jpg" alt=""></div>
-        <div id="TOUR" class="imgwrap"><img src="img/main_slide4.jpg" alt=""></div>
-        <div id="LOCATION" class="imgwrap"><img src="img/main_slide6.jpg" alt=""></div>
-        <div id="RESERVATION" class="imgwrap"><img src="img/main_slide5.jpg" alt=""></div>
+        <div id="PROLOGUE" class="imgwrap"><img src="img/header_slide1.jpg" alt=""></div>
+        <div id="ROOMS" class="imgwrap"><img src="img/header_slide2.jpg" alt=""></div>
+        <div id="SPECIAL" class="imgwrap"><img src="img/header_slide3.jpg" alt=""></div>
+        <div id="TOUR" class="imgwrap"><img src="img/header_slide4.jpg" alt=""></div>
+        <div id="LOCATION" class="imgwrap"><img src="img/header_slide6.jpg" alt=""></div>
+        <div id="RESERVATION" class="imgwrap"><img src="img/header_slide5.jpg" alt=""></div>
       </div>
     </div>
   </div>

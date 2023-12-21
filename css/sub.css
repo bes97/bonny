@@ -1,5 +1,6 @@
 @import url(sub_common.css);
 
+.video { width: 100%; height: 100%;}
 /* .sub1_view */ 
 .sub1_view h2 { margin-bottom:1em; text-align: center;}
 .sub1_view h3 { margin-bottom:1.5em; text-align: center;}
@@ -95,8 +96,8 @@ font-weight: 400; }
 .sub2_room .more .icon { position: absolute; right: 0.5em;top: 50%; transform: translateY(-50%); }
 .sub2_room .more .remove { display: none;}
 .sub2_room .more .add { display: block;}
-.sub2_room .more .icon.active .remove{ display: block;}
-.sub2_room .more .icon.active .add{ display: none;}
+.sub2_room .more .icon.focus .remove{ display: block;}
+.sub2_room .more .icon.focus .add{ display: none;}
 .sub2_room .imgtxtbox {
   position: relative;
   font-size: 1.1rem;
@@ -130,7 +131,8 @@ font-weight: 400; }
 @media all and (max-width: 560px) {
 .sub2_room .sec1 .grid { display: block; height: auto; }
 .sub2_room .sec1 .area1 { margin-bottom: 50px; }
-.sub2_room .sec1 .reser { text-align: center; }
+.sub2_room .sec1 .reser { width: 100%;text-align: center; }
+.sub2_room .sec1 .reser > div { width: 100%;}
 .sub2_room .sec1 .txtcont { font-size: 0.9rem;text-align: center;}
 .sub2_room .rightbox { width: 100%; }
 .sub2_room .leftbox { width: 100%; }
@@ -202,7 +204,7 @@ font-weight: 400; }
 
 .sub4_tour .list_item .more { font-size: 0.875rem; padding:0 1em; text-align: right;}
 .sub4_tour .list_item .icon { transform: translateY(6px); transition: 0.5s;}
-.sub4_tour .list_item .icon.active { 
+.sub4_tour .list_item .icon.focus { 
   transform: translateY(3px) rotate(225deg); transform-origin: center;}
 .sub4_tour .imgtxtbox {
   position: relative;
@@ -269,7 +271,7 @@ font-weight: 400; }
 .sub5_reser .sec4 .abs { position: absolute; width: 100%; height: 100%; 
   top: 0; left: 0; color: #ffffff;font-size: 1.5vw; line-height: 2em;}
 .sub5_reser #sky {
-  background:url('../img/sub5_reservation_img6_2.png') center;
+  background:url('../img/sub6_reservation_img7.jpg') center;
   background-size:120%;
   position:relative;
   width:100%;
@@ -286,6 +288,11 @@ font-weight: 400; }
 .tb-d2 th:last-child p{ padding-right: 5%;} */
 .sub5_reser .sec5 .subcont {  margin-bottom: 5vw;text-align: center;line-height: 2em; }
 .sub5_reser .btnwrap { text-align: center;}
+
+
+/* map */
+.sub5_reser .sec1 .pc_map { width: 100%; }
+.sub5_reser .sec1 .m_map { display: none }
 
 
 @media all and (max-width: 800px) {
@@ -306,4 +313,9 @@ font-weight: 400; }
   .sub5_reser  .sec3 .txtbox { margin-bottom: 50px; }
   .sub5_reser  #sky { height: 40vh; background-size:150%;}
   .sub5_reser  .sec5 .txtcont, .sub5_reser .sec5 .subcont { font-size: 0.9rem; line-height: 1.5em; margin-top: 50px; margin-bottom: 50px;}
+  
+  /* map */
+  .sub5_reser .sec1 .pc_map { display: none }
+  .sub5_reser .sec1 .m_map { display: flex !important; justify-content: center; margin-bottom: 50px; }
+
 }

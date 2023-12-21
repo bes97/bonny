@@ -56,6 +56,9 @@ body { padding-bottom: 700px; }
     font-weight: 400;font-size: 2vw;color: #ffffff;text-align: center;}
 .rollerwrap .rollerul > div { padding-right: 0;}
 .rollerwrap .rollerul > div.clone { } */
+.m-br{
+  display: none;
+}
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -80,11 +83,21 @@ body { padding-bottom: 700px; }
   #reserv .animated-title { margin-bottom: 50px; height: 15vw}
   #reserv .animated-title  .bonny { height: 13vw; width: 10vw }
 
+  .slidetxt {font-size: 1.5rem;}
+  /* .reserv_cont{ display: flex;flex-wrap: wrap;} */
   .reserv_cont{ display: flex;flex-wrap: wrap;}
-  .reserv_txt{ order:2; display: flex;flex-wrap: wrap;position: relative; top: 0; left: auto; width: 100%; height: 100%; max-width: 420px;max-height: 420px;}
-  .reserv_txt .reservation{ order: 2; width: 50vw; height: 50vw; margin-left: auto;}
-  .reserv_txt .concept{ order: 1; position: relative; right: 0;padding-top: 50px;}
-  .reserv_txt .circle_txt { font-size: 2rem; top: 35%;}
+  .reserv_txt{ order:2; 
+    /* display: flex;flex-wrap: wrap; */
+    display: grid;
+    grid-template-areas:
+      "b"
+      "a";
+    position: relative; top: 0; left: auto; width: 100%; height: 100%; max-width: 420px;max-height: 420px;}
+  .reserv_txt .reservation{ grid-area:a; width: 35vw; height: 35vw; margin-left: auto;margin-right: auto;margin-top: 70px;}
+  .reserv_txt .concept{ grid-area:b; position: relative; right: 0;padding-top: 50px;}
+  .reserv_txt .circle_txt { font-size: 1.5rem; top: 35%;}
+  .reserv_txt .circle_small { font-size: 0.9rem; }
+  .circle_arr:after { width: 10px; height: 10px;top: -5px;right:0;}
   .reserv_cont .left_cont { order: 1; position: relative;top: 0px; width: 100%;}
   .reserv_cont .left_cont div:nth-child(1) { 
     transform: translateX(0); z-index: 1;
@@ -99,10 +112,12 @@ body { padding-bottom: 700px; }
   .reserv_cont .left_cont div:nth-child(2) img { width: 30vw; display: block; margin-left: auto;}
   .reserv_cont .left_cont div:nth-child(3) { display: none;}
 
-  .titwrap .titsub { font-size: 1.5rem;}
+  .titwrap .titsub { font-size: 1.5rem;line-height:1em;margin-bottom: 10px;}
   .titwrap .tit {
     font-size: 2rem;
     font-weight: 400;
     letter-spacing: -2px;
+    line-height:1em;
+    margin-bottom: 15px;
   } 
 }

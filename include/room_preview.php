@@ -12,7 +12,7 @@
               <div class="room rooma scrollon scrollup">
                 <div class="roomimg">
                   <!-- <div class="pointer"></div> -->
-                  <img src="img/main_poolvilla_a.jpg" alt="poolvillaA">
+                  <a href="sub2_room1.html"><img src="img/room_preview1.jpg" alt="poolvillaA"></a>
                 </div>
                 <div class="roomtxt">
                     <p class="roomname"><a href="sub2_room1.html">poolvilla <i class="roomtype">A</i></a></p>
@@ -21,7 +21,7 @@
               </div>
               <div class="room roomb scrollon scrollup">
                 <div class="roomimg">
-                    <img src="img/main_poolvilla_b.jpg" alt="poolvillaB">
+                    <a href="sub2_room2.html"><img src="img/room_preview2.jpg" alt="poolvillaB"></a>
                 </div>
                 <div class="roomtxt">
                     <p class="roomname"><a href="sub2_room2.html">poolvilla <i class="roomtype">B</i></a></p>
@@ -33,7 +33,7 @@
               </div>
               <div class="room roomc scrollon scrollup">
                 <div class="roomimg">
-                    <img src="img/main_poolvilla_c.jpg" alt="poolvillaC">
+                    <a href="sub2_room3.html"><img src="img/room_preview3.jpg" alt="poolvillaC"></a>
                 </div>
                 <div class="roomtxt">
                     <p class="roomname"><a href="sub2_room3.html">poolvilla <i class="roomtype">C</i></a></p>
@@ -42,7 +42,7 @@
               </div>
               <div class="room roomd scrollon scrollup">
                 <div class="roomimg">
-                    <img src="img/main_poolvilla_d.jpg" alt="poolvillaD">
+                    <a href="sub2_room4.html"><img src="img/room_preview4.jpg" alt="poolvillaD"></a>
                 </div>
                 <div class="roomtxt">
                     <p class="roomname"><a href="sub2_room4.html">poolvilla <i class="roomtype">D</i></a></p>
