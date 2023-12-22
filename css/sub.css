@@ -152,6 +152,7 @@ font-weight: 400; }
   z-index: 9999;width: 100%;
   font-weight: 400;font-size: 2vw;color: #ffffff;text-align: center;line-height: 2em;}
 .sub3_special .centerslidewrap img {width: 100%;}
+.sub3_special .centerslidewrap video {width: 100%;}
 .sub3_special .centerslidewrap .rollerwrap { height: 40vw; }
 .sub3_special .centerslidewrap .rollerwrap .rollerul > div { padding: 0 20px;}
 .sub3_special .sec2 { margin-bottom: calc(9vw * 0.8)  }
