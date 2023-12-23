@@ -3,7 +3,7 @@
 .video { width: 100%; height: auto;}
 .slidewrap .slick-slide img, .slidewrap .slick-slide video  {
   width: 100%;
-  height: 50vh !important;
+  height: 100vh !important;
   object-fit: cover;
 }
 /* .sub1_view */ 
@@ -175,6 +175,10 @@ font-weight: 400; }
 .sub3_special .typingtxt2.typing-ani.active::after { animation-delay: 1.5s; }
 .sub3_special .rollerul > div { width: 25vw;}
 @media all and (max-width: 560px) {
+  .slidewrap .slick-slide img, .slidewrap .slick-slide video  {
+    height: 50vh !important;
+  }
+
   .sub3_special .sec1 .imgbox { padding: 0; margin-top: 5vw; }
   .sub3_special .sec1 .txtcont { margin-top: 5vw;margin-bottom: 10vw;font-size: 0.9rem;text-align: center; line-height: 1.5em;}
   .sub3_special .rollerul > div { width: 50vw;}
