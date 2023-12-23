@@ -14,8 +14,9 @@ body { padding-bottom: 700px; }
 .slidewrap .lazyno .slick-arrow.slick-next { right: calc(50% - 110px);}
 .slidewrap .lazyno .slick-arrow.slick-next::before { content: "\e5e1"; font-size: 1.5rem;text-shadow: 0px 0 5px #00000080;}
 
-.popupbtn{ position:absolute; right:5vw; bottom: 20vw; width: auto; z-index:9999}
-.popupbtn button {padding:15px;min-width:200px; border: 1px solid #ffffff; color: #ffffff; }
+.popupbtn{ position:absolute; right:5vw; bottom: 20vw; width: auto; z-index:9999;}
+.popupbtn button {padding:15px 0 8px;min-width:200px; border: 1px solid #ffffff; color: #ffffff; font-family: "Calista";
+  font-weight: 100;}
 .popupbtn:hover button {background-color: #ffffff;color:#000000;}
 .popup { display:none;position:absolute; left:0;top:0; width:100vw;height:100vh;background-color: #00000090; 
         z-index: 99999}
@@ -107,8 +108,8 @@ body { padding-bottom: 700px; }
 
 @media all and (max-width: 1024px) { 
   .slidewrap .lazyno .slick-dots li { font-size: 0.9rem; }
-  .slidewrap .popupbtn{ right:20px; bottom: auto; top: 100px}
-  .slidewrap .popupbtn button { padding: 5px 10px; min-width: auto;}
+  .slidewrap .popupbtn{ right:10px; bottom: 10px; }
+  .slidewrap .popupbtn button { padding: 5px 10px 0px; min-width: auto;}
 
   .reserv_cont .right_cont { display: none;}
   .reserv_txt { left: auto; right: 0;}
@@ -125,7 +126,7 @@ body { padding-bottom: 700px; }
   html {font-size: 14px;}
   .pt100 { padding-top: 50px;}
   
-  .slidewrap .popupbtn {display: none;}
+  /* .slidewrap .popupbtn {display: none;}  비디오팝업버튼 노출안함 */
   #reserv .animated-title { margin-bottom: 50px; height: 15vw}
   #reserv .animated-title  .bonny { height: 13vw; width: 10vw }
 
