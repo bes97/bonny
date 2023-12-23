@@ -1,0 +1,188 @@
+<? 
+include_once('./_common.php'); 
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>풀빌라 바니</title>
+  <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
+  <script src="js/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/common.js" type="text/Javascript" charset="UTF-8"></script>
+  <script src="js/ui.js" type="text/Javascript" charset="UTF-8"></script>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+
+  <script>
+    $(function() {
+      floatingObject('.floating1',0,30);
+      floatingObject('.floating2',1.5,-30);
+      floatingObject('.floating3',2,20);
+      floatingObject('.floating4',0.5,-30);
+      floatingObject('.floating5',1.5,-20);
+      floatingObject('.floating6',1,20);
+
+      let lastScrollY = 0;
+      window.addEventListener('scroll', e => {
+        const scrollY = window.scrollY;
+        const scrollDown = scrollY > lastScrollY;
+        if (scrollDown) {
+          floatingObject('.floating1',0,30);
+          floatingObject('.floating2',1.5,-30);
+          floatingObject('.floating3',2,20);
+          floatingObject('.floating4',0.5,-30);
+          floatingObject('.floating5',1.5,-20);
+          floatingObject('.floating6',1,20);
+        } else {
+          floatingObject('.floating1',0,0);
+          floatingObject('.floating2',1.5,0);
+          floatingObject('.floating3',2,0);
+          floatingObject('.floating4',0.5,0);
+          floatingObject('.floating5',1.5,0);
+          floatingObject('.floating6',1,0);
+        }
+        lastScrollY = scrollY;
+      });
+    })
+  </script>
+</head>
+<body>
+  <div id="wrap">
+    <?php
+    include G5_BBS_PATH.'/newwin.inc.php'; // 팝업레이어		
+    include G5_PLUGIN_PATH."/popup/popup_source.php";  
+    ?>    
+    <header id="header"></header>
+    <div id="main">
+      <section class="slidewrap vdo-top">
+        <div class="lazyno slider">
+          <div class="vdo">
+            <iframe src="https://player.vimeo.com/video/895675706?&amp;loop=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;autopause=0&amp;muted=1&amp;autoplay=1&amp;fullscreen=1" frameborder="0" allow="autoplay;loop; fullscreen" allowfullscreen="true" data-ready="true"></iframe><script src="https://player.vimeo.com/api/player.js"></script>
+            <img src="img/gallary/main/8.jpg">
+         </div>
+          <div>
+            <img src="img/gallary/main/1.jpg">
+          </div>
+          <div>
+            <img src="img/gallary/main/2.jpg">
+          </div>
+          <div>
+            <img src="img/gallary/main/3.jpg">
+          </div>
+          <div>
+            <img src="img/gallary/main/4.jpg">
+          </div>
+          <div>
+            <img src="img/gallary/main/5.jpg">
+          </div>
+          <div>
+            <img src="img/gallary/main/6.jpg">
+          </div>
+          <div>
+            <img src="img/gallary/main/7.jpg">
+          </div>
+          <div>
+            <img src="img/gallary/main/8.jpg">
+          </div>
+          <div>
+            <img src="img/gallary/main/9.jpg">
+          </div>
+          <div>
+            <img src="img/gallary/main/10.jpg">
+          </div>
+          <div>
+            <img src="img/gallary/main/11.jpg">
+          </div>
+          <div>
+            <img src="img/gallary/main/12.jpg">
+          </div>
+          <div>
+            <img src="img/gallary/main/13.jpg">
+          </div>
+          <div>
+            <img src="img/gallary/main/14.jpg">
+          </div>
+          <div>
+            <img src="img/gallary/main/15.jpg">
+          </div>
+          <div>
+            <img src="img/gallary/main/16.jpg">
+          </div>
+        </div>
+        <div class="slidetxt f_calista">Poolvilla Bonny</div>
+        <div class="popupbtn" data-target="#p001"><button>WATCH VIDEO</button></div>
+        <div class="popup" id="p001">
+          <button class="close">닫기</button>
+          <div class="popupwrap">
+            <div class="popcont"><img src="img/header_slide1.jpg"></div>
+          </div>
+          
+        </div>
+        <div class="sticky-box">
+          <div class="vdo">
+            <iframe src="https://player.vimeo.com/video/895675706?&amp;loop=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;autopause=0&amp;muted=1&amp;autoplay=1&amp;fullscreen=1" frameborder="0" allow="autoplay;loop fullscreen" allowfullscreen="true" data-ready="true"></iframe><script src="https://player.vimeo.com/api/player.js"></script>
+         </div>
+        </div>
+      </section>
+
+      <!-- 스페셜 프리뷰 -->
+      <?php include('include/special_preview.php'); ?>
+      <!-- 스페셜 프리뷰 -->
+      
+      <!--객실 프리뷰-->
+      <?php include('include/room_preview.php'); ?>
+      <!--객실 프리뷰-->      
+      
+      <section id="reserv">
+        <div class="animated-title f_calista">
+          <div class="track">
+              <span>POOLVILLA<i class="bonny"></i>BONNY</span>
+              <span>POOLVILLA<i class="bonny"></i>BONNY</span>
+          </div>
+        </div>
+        <div class="reserv_cont winside pt100">
+          <div class="reserv_txt">
+             <div class="reservation">
+              <div class="circle scrollon">
+                <svg
+                  class="moving-outline" width="100%" height="100%" 
+                  viewBox="0 0 453 453" fill="none">
+                  <circle
+                    cx="226.5" cy="226.5" r="210" 
+                    stroke="#121f29" stroke-width="1"
+                  />
+                </svg>
+              </div>
+              <div class="circle_txt f_calista scrollon">
+                <div class="tit">RESER<br>VATION</div>
+                <div class="circle_arr"></div>
+                <div class="circle_small f_pretendard"><a href="https://booking.ddnayo.com/booking-calendar-status?accommodationId=100593" target="_blank">예약하기</a></div>
+              </div>
+            </div>
+            <div class="concept scrollon">
+              <div class="tit f_ephesis">concept,</div>
+              <div class="txt">
+                <p>바닷가 인근에 자리한 풀빌라로, </p>
+                <p>소리 내어 웃고 바닷가에서 햇빛을 즐기며, </p>
+                <p>최상의 휴식을 경험하세요.</p>
+              </div>
+            </div>
+          </div>
+          <div class="left_cont scrollon">
+            <div class="floating1"><img src="img/main_reserv_01.jpg"></div>
+            <div class="floating2"><img src="img/main_reserv_02.jpg"></div>
+            <div class="floating3"><img src="img/main_reserv_03.jpg"></div>
+          </div>
+          <div class="right_cont scrollon">
+            <div class="floating4"><img src="img/main_reserv_04.jpg"></div>
+            <div class="floating5"><img src="img/main_reserv_05.jpg"></div>
+            <div class="floating6"><img src="img/main_reserv_06.jpg"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer id="footer" class="scrollon"></footer>
+  </div>

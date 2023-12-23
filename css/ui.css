@@ -78,44 +78,30 @@
 .slidewrap .slick-dots li button{ 
   position: absolute;top: 0;left: 0;
   font-size: 0;width: 0;height: 100%; background-color: var(--shape);
-   animation: slickdot 4000ms linear forwards; }
+  animation: slickdot 4000ms linear forwards; }
 .slidewrap .slick-dots li.slick-active { display: block;}
 .slidewrap  .slidetxt { 
   position: absolute;left: 50%;
   transform: translateX(-50%);
   color: var(--background);
 }
-.slidewrap  .slick-slide div { width: 100vw; height: 100vh; }
-.slidewrap  .slick-slide img, .slidewrap  .slick-slide video { width: 100%; height: 100%; object-fit: cover; }
+.slidewrap  .slick-slide > div { width: 100vw; height: auto; /* 100vh시 비디오 플레이어 잘림 */ }
+.slidewrap  .slick-slide img { width: 100%; height: 100%; object-fit: cover; }
 
-.slidewrap .lazyno .slick-dots li {position: relative;height: 1px;}
-.slidewrap .lazyno .slick-dots li button { animation: none }
-.slidewrap .lazyno .slick-dots li span {position: absolute;top: -0.5em; color: #ffffff;font-family: 'Lato', sans-serif;}
-.slidewrap .lazyno .slick-dots li .curpage { left: -1.5em;text-shadow: 0px 0 2px #000000;}
-.slidewrap .lazyno .slick-dots li .total { right: -1.5em;text-shadow: 0px 0 2px #000000;}
-.slidewrap .lazyno .slick-arrow { position: absolute;bottom: 53px; transform: translateY(-50%); z-index: 1000;
-  color:#ffffff;font-size: 0;font-family: 'Material Symbols Outlined';}
-.slidewrap .lazyno .slick-arrow.slick-prev { left: calc(50% - 110px);}
-.slidewrap .lazyno .slick-arrow.slick-prev::before { content: "\e5e0"; font-size: 1.5rem;text-shadow: 0px 0 1px #00000080;}
-.slidewrap .lazyno .slick-arrow.slick-next { right: calc(50% - 110px);}
-.slidewrap .lazyno .slick-arrow.slick-next::before { content: "\e5e1"; font-size: 1.5rem;text-shadow: 0px 0 5px #00000080;}
-
-.slidewrap .vdo{width: 110vw; height: 100vh; position: absolute;  top: 0; left: 0;}
-.slidewrap{position: relative;}
-.slick-slide.vertical .vdo{height: 100%; width: 177.777vh;}
-.slick-slide.horizon .vdo{width: 200vw;height: 56vw}
-video{width: 100%; }
-iframe{width: 100%;height: 100%;pointer-events: none !important;}
+.slidewrap .pcvdo { 
+  position:relative;padding:56.25% 0 0 0;
+}
+.slidewrap .replace { display: none;}
 .sticky-box {display: none;}
 
-
 @media all and (max-width: 700px ) {
-  .sticky-box { display: block;  position: relative; width: 100vw; height:58vw; margin: 0;transform: translateY(-10px);}
-  .sticky-box .vdo{width:100%; height:100%; position: absolute;  top: 0; left: 0;}
-  .sticky-box.vertical .vdo, .sticky-box.horizon .vdo{width: 200vw;height: 100vw}
-  .slick-slide .vdo iframe{display: none !important;}
-  .slidewrap .lazyno .slick-dots li button { animation: slickdot 4000ms linear forwards; }
-  .slidewrap .lazyno .slick-arrow { bottom: 50px;}
+  .sticky-box { display: block;  position: relative; height:58vw; margin: 50px 0;}
+  /* .sticky-box .pcvdo{width:100%; height:100%; position: absolute;  top: 0; left: 0;}
+  .sticky-box.vertical .pcvdo, .sticky-box.horizon .pcvdo{width: 200vw;height: 100vw} */
+  .slick-slide .pcvdo{display: none !important;}
+  .slidewrap .replace { display: block;}
+  .popupbtn{ position:absolute; right:20px; bottom: 20px; width: auto; z-index:9999}
+  .popupbtn button {padding:10px;min-width:100px; border: 1px solid #ffffff; color: #ffffff;font-size: 0.9rem;}
 }
 @keyframes slickdot {
   to { width: 100%; }

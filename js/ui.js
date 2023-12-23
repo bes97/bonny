@@ -169,27 +169,40 @@ $(function() {
   });
 
   //영상 풀사이즈 조절
-  const top_vdo_size = function(){
-    const vdo_con = $(".vdo").parents('.slick-slide');
-    function set_size(){
-        if($(window).width() > 700){
-            if($(window).width() >= ($(window).height()) * 1.7853){
-                vdo_con.addClass("horizon")
-                vdo_con.removeClass("vertical")
-            }else{
-                vdo_con.addClass("vertical")
-                vdo_con.removeClass("horizon")
-            }
-        }
-    }
-    set_size()
-    $(window).on("load resize", function(){
-        set_size()
-    })
-}  
-if($(".vdo").length > 0){
-    top_vdo_size()
-}
+//   const top_vdo_size = function(){
+//     const vdo_con = $(".pcvdo").parents('.slick-slide');
+//     function set_size(){
+//        // if($(window).width() > 700){
+//             // if($(window).width() >= ($(window).height()) * 1.7853){
+//               if($(window).width() >= ($(window).height())){
+//                 vdo_con.addClass("horizon")
+//                 vdo_con.removeClass("vertical")
+//             }else{
+//                 vdo_con.addClass("vertical")
+//                 vdo_con.removeClass("horizon")
+//             }
+//         // }
+//     }
+//     set_size();
+//     $(window).on("load resize", function(){
+//         set_size();
+//     })
+// }  
+// if($(".vdo").length > 0){
+//     top_vdo_size()
+// }
+
+//  버튼클릭시 띄우는 팝업
+$('.popupbtn').on("click", function(){
+  let popupid = $(this).data("target");
+  $(popupid).fadeIn(500);
+  if ($(popupid).find("video")) {
+    $(popupid).find("video").load;
+  }
+})
+$('.popup .close').on("click", function(){
+  $(this).closest('.popup').fadeOut(500);
+})
 
    if (window.innerWidth > 560) {
     //패럴랙스

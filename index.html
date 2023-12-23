@@ -59,10 +59,12 @@ include_once('./_common.php');
     <div id="main">
       <section class="slidewrap vdo-top">
         <div class="lazyno slider">
-          <div class="vdo">
-            <iframe src="https://player.vimeo.com/video/895675706?&amp;loop=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;autopause=0&amp;muted=1&amp;autoplay=1&amp;fullscreen=1" frameborder="0" allow="autoplay;loop fullscreen" allowfullscreen="true" data-ready="true"></iframe><script src="https://player.vimeo.com/api/player.js"></script>
-            <img src="img/gallary/main/8.jpg">
-         </div>
+          <div>
+            <div class="pcvdo">
+              <iframe src="https://player.vimeo.com/video/895675706?h=8f080baf5c&autoplay=1&loop=1&muted=1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="replace"><img src="img/gallary/main/8.jpg"></div>
+          </div>
           <div>
             <img src="img/gallary/main/1.jpg">
           </div>
@@ -113,13 +115,21 @@ include_once('./_common.php');
           </div>
         </div>
         <div class="slidetxt f_calista">Poolvilla Bonny</div>
-        <div class="sticky-box">
-          <div class="vdo">
-            <iframe src="https://player.vimeo.com/video/895675706?&amp;loop=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;autopause=0&amp;muted=1&amp;autoplay=1&amp;fullscreen=1" frameborder="0" allow="autoplay;loop fullscreen" allowfullscreen="true" data-ready="true"></iframe><script src="https://player.vimeo.com/api/player.js"></script>
-         </div>
+        <div class="popupbtn" data-target="#p001"><button>WATCH VIDEO</button></div>
+        <div class="popup" id="p001">
+          <button class="close">닫기</button>
+          <div class="popupwrap">
+            <div class="popcont">
+              <video src="video/special4_vdo.mp4" class="video" autoplay muted loop controls></video>
+            </div>
+          </div>
         </div>
       </section>
-
+      <div class="sticky-box">
+        <div class="vdo">
+          <iframe src="https://player.vimeo.com/video/895675706?h=8f080baf5c&autoplay=1&loop=1&muted=1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+       </div>
+      </div>
       <!-- 스페셜 프리뷰 -->
       <?php include('include/special_preview.php'); ?>
       <!-- 스페셜 프리뷰 -->
@@ -157,9 +167,13 @@ include_once('./_common.php');
             <div class="concept scrollon">
               <div class="tit f_ephesis">concept,</div>
               <div class="txt">
-                <p>바닷가 인근에 자리한 풀빌라로, </p>
+                <p>프라이빗한 독채로 구성된 풀빌라바니. </p>
+                <p>객실에서 실내풀장과 바베큐를 즐기실 수 있습니다. </p>
+                <p>객실에 앉아 서해의 푸른바다와 아름다운 석양을 즐겨보세요.</p>
+                <p>소중한 사람들과 잊지못할 추억을 만드시길 바랍니다.</p>
+                <!-- <p>바닷가 인근에 자리한 풀빌라로, </p>
                 <p>소리 내어 웃고 바닷가에서 햇빛을 즐기며, </p>
-                <p>최상의 휴식을 경험하세요.</p>
+                <p>최상의 휴식을 경험하세요.</p> -->
               </div>
             </div>
           </div>
