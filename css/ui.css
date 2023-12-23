@@ -335,7 +335,10 @@
 .paral { transition: background 1s;}
 
 @media all and ( max-width: 560px ) {
-  .slidewrap.vdo-top .slick-slide > div >div { width: 100vw; height: 50vh; }
+  .slidewrap .slick-slide > div  { width: 100vw; height: 50vh; }
+  .slidewrap.vdo-top  .slick-slide > div  { height: auto }
+  .slidewrap.vdo-top .slick-slide > div >div { height: 50vh; }
+
   .slidetxt { font-size: 6vw;}
 
   #villa { padding-bottom: 50px;}
